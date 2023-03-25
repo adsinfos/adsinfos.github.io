@@ -5,8 +5,16 @@
 
       <div id="superior" *ngIf="showSuperior"></div>
       <h6 class="mb-3 fw-normal" *ngIf="cuando">Espera por favor..{{resto()}} segundos</h6>
-      <button type="button" class="btn btn-primary" [disabled]="disable" (click)="click()">{{texto}}</button>
-      <h6 class="mb-3 fw-normal" *ngIf="nohay">Solo aceptamos links de {{hostsvalidos}} </h6>
+      <button type="button" class="btn btn-primary" [disabled]="disable" (click)="click()" *ngIf="!nohay">{{texto}}</button>
+      <div *ngIf="nohay">
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">Servicio de redireccion de links de noticias y links de wordpress</p>
+          <p class="lead mb-4">Links de {{hostsvalidos}}</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button type="button" class="btn btn-primary btn-lg px-4 gap-3">En construcción!</button>
+          </div>
+        </div>
+      </div>
       <div id="inferior" *ngIf="showInferior"></div>
     </div>
   </div>
