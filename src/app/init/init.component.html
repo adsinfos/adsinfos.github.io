@@ -1,10 +1,12 @@
 <div class="container text-center">
   <div class="row">
     <div class="col">
-      <h2 class="mb-3 fw-normal">AdInfo Linkers</h2>
+      <img class="logo" src="assets/images/logo.png" alt="My Image">
+
       <div id="superior" *ngIf="showSuperior"></div>
       <h6 class="mb-3 fw-normal" *ngIf="cuando">Espera por favor..{{resto()}} segundos</h6>
       <button type="button" class="btn btn-primary" [disabled]="disable" (click)="click()">{{texto}}</button>
+      <h6 class="mb-3 fw-normal" *ngIf="nohay">Solo aceptamos links de {{hostsvalidos}} </h6>
       <div id="inferior" *ngIf="showInferior"></div>
     </div>
   </div>

@@ -19,6 +19,9 @@ export class InitComponent {
   showSuperior: boolean = true;
   maximo: number = 30;
   cuando: boolean = false;
+
+  hostsvalidos: string = "";
+  nohay: boolean = false;
   constructor(private util: UtilService) {
     this.link = Buffer.from(util.getparameter('link'), 'base64').toString();
     let host: any;
@@ -30,6 +33,7 @@ export class InitComponent {
       mandaron = false;
     }
     if (mandaron) {
+      this.nohay=false;
       let hostlink: string;
       hostlink = host.hostname;
       let esta: boolean;
@@ -50,7 +54,16 @@ export class InitComponent {
     } else {
       this.disable = true;
       this.texto = "No se envio link";
+      this.nohay=true;
+      this.validos();
     }
+  }
+  public validos() {
+    this.hostsvalidos = "";
+    for (let i = 0; i < data.lista.length; i++) {
+      this.hostsvalidos = this.hostsvalidos + data.lista[i].site + ",";
+    }
+    this.hostsvalidos.substring(0, this.hostsvalidos.length - 1);
   }
   public click() {
     if (!this.readyLink) {
