@@ -21,24 +21,36 @@ export class InitComponent {
   cuando: boolean = false;
   constructor(private util: UtilService) {
     this.link = Buffer.from(util.getparameter('link'), 'base64').toString();
-    const host = new URL(this.link);
-    let hostlink: string;
-    hostlink = host.hostname;
-    let esta: boolean;
-    esta = false;
+    let host: any;
+    let mandaron: boolean;
+    try {
+      host = new URL(this.link);
+      mandaron = true;
+    } catch (ex) {
+      mandaron = false;
+    }
+    if (mandaron) {
+      let hostlink: string;
+      hostlink = host.hostname;
+      let esta: boolean;
+      esta = false;
 
-    for (let i = 0; i < data.lista.length; i++) {
-      if (data.lista[i].host == hostlink) {
-        esta = true;
+      for (let i = 0; i < data.lista.length; i++) {
+        if (data.lista[i].host == hostlink) {
+          esta = true;
+        }
       }
-    }
-    if (esta == false) {
-      this.link = "NO PERMITIDO";
-    } else {
-      this.hostin = hostlink;
-    }
+      if (esta == false) {
+        this.link = "NO PERMITIDO";
+      } else {
+        this.hostin = hostlink;
+      }
 
-    this.texto = "Entrar a link";
+      this.texto = "Entrar a link";
+    }else{
+      this.disable=true;
+      this.texto="No se envio link";
+    }
   }
   public click() {
     if (!this.readyLink) {
