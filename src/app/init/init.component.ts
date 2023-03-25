@@ -34,7 +34,7 @@ export class InitComponent {
       hostlink = host.hostname;
       let esta: boolean;
       esta = false;
-
+      hostlink = hostlink.replace("www.", "");
       for (let i = 0; i < data.lista.length; i++) {
         if (data.lista[i].host == hostlink) {
           esta = true;
@@ -47,9 +47,9 @@ export class InitComponent {
       }
 
       this.texto = "Entrar a link";
-    }else{
-      this.disable=true;
-      this.texto="No se envio link";
+    } else {
+      this.disable = true;
+      this.texto = "No se envio link";
     }
   }
   public click() {
