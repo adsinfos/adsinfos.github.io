@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'adinfo';
+  constructor() {
+    const url = window.location.href;
+    const hasnewFormat = url.includes('/#/');
+    if (!hasnewFormat) {
+      const newUrl = url.replace('/?', '/#/?');
+      window.location.href = newUrl;
+    }
+
+  }
 }

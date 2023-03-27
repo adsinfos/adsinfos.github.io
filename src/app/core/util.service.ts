@@ -8,7 +8,9 @@ export class UtilService {
 
   }
   public getparameter(este: string) {
-    const urlParams = new URLSearchParams(window.location.search);
+    let hash:string=window.location.hash;
+    hash=hash.replace("#/","");
+    const urlParams = new URLSearchParams(hash);
     let resul:any=urlParams.get(este);
     return resul==null?"":resul;
   }
