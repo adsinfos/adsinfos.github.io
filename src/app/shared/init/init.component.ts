@@ -4,6 +4,7 @@ import { Buffer } from 'buffer';
 import { UtilService } from '../../core/util.service';
 import { TipoService } from 'src/app/core/tipo.service';
 import { LlaveService } from 'src/app/core/llave.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-init',
@@ -26,12 +27,10 @@ export class InitComponent {
   nohay: boolean = false;
   ti: string = "";
 
-  constructor(private util: UtilService, private tipo: TipoService, private llave: LlaveService) {
+  constructor(private router: Router, private util: UtilService, private tipo: TipoService, private llave: LlaveService) {
     this.ti = util.getparameter('ti');
     if (this.ti === "") {
       this.link = Buffer.from(util.getparameter('link'), 'base64').toString();
-
-
       let host: any;
       let mandaron: boolean;
       try {
@@ -67,8 +66,23 @@ export class InitComponent {
       }
     } else if (this.ti === "2") {
       let data: string = util.getparameter('data');
-      console.log(data);
-      console.log(llave.valid(data));
+      let ti: string = util.getparameter('ti');
+
+      if (llave.valid(data)) {
+        this.texto = "Ver los datos";
+        this.disable = false;
+        this.hostin = "ver datos Sicoes";
+        this.link = "/#/contratacion";
+        tipo.setTipo(ti);
+        tipo.setAux(data);
+      } else {
+        this.texto = "Datos no validos";
+        this.disable = true;
+        this.hostin = "DAtos no validos";
+        this.link = "/#/error";
+        tipo.setTipo("");
+        tipo.setAux("");
+      }
 
     }
   }
@@ -93,15 +107,18 @@ export class InitComponent {
           this.texto = "Ir a " + this.hostin;
           this.cuando = false;
         }
-        if (this.maximo % this.count) {
+        if (this.count % 5==0) {
           this.refreshDivs();
         }
       }, 1000);
+    } else if (this.tipo.getTipo() == "2") {
+      this.router.navigate(['/contratacion']);
     } else {
       window.location.href = this.link != null ? this.link : '';
     }
   }
   public refreshDivs() {
+    console.log("refrescando divs");
     this.showInferior = false;
     this.showSuperior = false;
     setTimeout(() => {

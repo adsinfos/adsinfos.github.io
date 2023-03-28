@@ -1,1 +1,87 @@
-<p>contratacion works!</p>
+<div id="superior" *ngIf="showSuperior"></div>
+
+<table class="table" *ngIf="contrata!=null">
+    <tbody>
+
+        <tr>
+            <td class="table-primary" align="left">
+                <b>CUCE</b>
+            </td>
+            <td class="table-active">
+                {{contrata.cuce}}
+            </td>
+        </tr>
+        <tr>
+            <td class="table-primary" align="left">
+                <b>Entidad</b>
+            </td>
+            <td>
+                {{contrata.entidad}}
+            </td>
+        </tr>
+        <tr>
+            <td class="table-primary" align="left">
+                <b>Tipo</b>
+            </td>
+            <td class="table-active">
+                {{contrata.tipo}}
+            </td>
+        </tr>
+        <tr>
+            <td class="table-primary" align="left">
+                <b>Modalidad</b>
+            </td>
+            <td>
+                {{contrata.modalidad}}
+            </td>
+        </tr>
+        <tr>
+            <td class="table-primary" align="left">
+                <b>Objeto</b>
+            </td>
+            <td class="table-active">
+                {{contrata.objeto}}
+            </td>
+        </tr>
+        <tr>
+            <td class="table-primary" align="left">
+                <b>Subasta</b>
+            </td>
+            <td>
+                {{contrata.subasta}}
+            </td>
+        </tr>
+        <tr>
+            <td class="table-primary" align="left">
+                <b>Fecha limite</b>
+            </td>
+            <td class="table-active">
+                {{contrata.presentacion}}
+            </td>
+        </tr>
+        <tr>
+            <td class="table-primary" align="left">
+                <b>Fecha Publicacióm</b>
+            </td>
+            <td>
+                {{contrata.publicacion}}
+            </td>
+        </tr>
+        <tr>
+            <td class="table-primary" align="left">
+                <b>Codigo para buscar Sicoes</b>
+            </td>
+            <td class="table-active">
+                {{idunico}} <b></b>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+<h6 class="mb-3 fw-normal">
+    Si desea descargar formularios, consultar las bases de contratación y obtener más información sobre los procesos de contrataciones estatales, puede ingresar al portal web de <a href="https://wwww.sicoes.gob.bo">SICOES</a> y buscar por el Código Único de Contrataciones Estatales (CUCE) en la cuarta casilla. El CUCE del proceso que le interesa es {{idunico}}. Además, en la opción "Ver" puede seleccionar "TODOS" para ver todos los detalles del proceso
+    <p><b>Nota.</b> Este no es un sitio oficial, es un servicio externo para notificar contrataciones estatales</p>
+</h6>
+
+<div id="inferior" *ngIf="showInferior"></div>
+<button type="button" class="btn btn-primary btn-lg px-4 gap-3" (click)="regresar()">Regresar</button>

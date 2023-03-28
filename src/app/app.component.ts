@@ -12,7 +12,9 @@ export class AppComponent {
     const hasnewFormat = url.includes('/#/');
     if (!hasnewFormat) {
       const newUrl = url.replace('/?', '/#/?');
-      window.location.href = newUrl;
+      if (newUrl != url) {
+        window.location.href = newUrl;
+      }
     }
 
   }
