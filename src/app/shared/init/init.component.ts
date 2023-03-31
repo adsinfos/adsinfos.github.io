@@ -5,6 +5,7 @@ import { UtilService } from '../../core/util.service';
 import { TipoService } from 'src/app/core/tipo.service';
 import { LlaveService } from 'src/app/core/llave.service';
 import { Router } from '@angular/router';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-init',
@@ -27,7 +28,7 @@ export class InitComponent {
   nohay: boolean = false;
   ti: string = "";
 
-  constructor(private router: Router, private util: UtilService, private tipo: TipoService, private llave: LlaveService) {
+  constructor(location: Location, private router: Router, private util: UtilService, private tipo: TipoService, private llave: LlaveService) {
     this.ti = util.getparameter('ti');
     if (this.ti === "") {
       this.link = Buffer.from(util.getparameter('link'), 'base64').toString();
@@ -107,7 +108,7 @@ export class InitComponent {
           this.texto = "Ir a " + this.hostin;
           this.cuando = false;
         }
-        if (this.count % 5==0) {
+        if (this.count % 5 == 0) {
           this.refreshDivs();
         }
       }, 1000);
@@ -117,8 +118,9 @@ export class InitComponent {
       window.location.href = this.link != null ? this.link : '';
     }
   }
-  public clicklink(link:string){
-    window.location.href=link;
+  public clicklink(link: string) {
+    location.href=link;
+    //window.location.href = link;
   }
   public refreshDivs() {
     console.log("refrescando divs");
