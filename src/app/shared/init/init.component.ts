@@ -120,6 +120,7 @@ export class InitComponent {
   }
   public clicklink(link: string) {
     location.href=link;
+    location.reload;
     //window.location.href = link;
   }
   public refreshDivs() {
