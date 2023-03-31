@@ -117,6 +117,9 @@ export class InitComponent {
       window.location.href = this.link != null ? this.link : '';
     }
   }
+  public clicklink(link:string){
+    window.location.href=link;
+  }
   public refreshDivs() {
     console.log("refrescando divs");
     this.showInferior = false;
