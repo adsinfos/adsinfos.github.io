@@ -119,9 +119,7 @@ export class InitComponent {
     }
   }
   public clicklink(link: string) {
-    location.href=link;
-    location.reload;
-    //window.location.href = link;
+    window.open(link,"_blank");
   }
   public refreshDivs() {
     console.log("refrescando divs");
