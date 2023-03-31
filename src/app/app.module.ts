@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import {Location} from '@angular/common';
+
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -18,7 +20,7 @@ import { ContratacionComponent } from './shared/contratacion/contratacion.compon
     AppRoutingModule
   ],
   providers: [
-    UtilService],
+    UtilService, Location],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
