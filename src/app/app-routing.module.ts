@@ -4,8 +4,11 @@ import { ContratacionComponent } from './shared/contratacion/contratacion.compon
 import { InitComponent } from './shared/init/init.component';
 
 const routes: Routes = [
-  { path: '', component: InitComponent },
-  { path: 'contratacion', component: ContratacionComponent }
+  { path: '', component: InitComponent }, 
+  { path: 'contratacion', component: ContratacionComponent },
+  { path: ':data', component: InitComponent }, 
+  { path: ':data/:tipo', component: InitComponent }
+
 ];
 
 @NgModule({

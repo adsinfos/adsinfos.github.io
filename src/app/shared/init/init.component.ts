@@ -4,8 +4,8 @@ import { Buffer } from 'buffer';
 import { UtilService } from '../../core/util.service';
 import { TipoService } from 'src/app/core/tipo.service';
 import { LlaveService } from 'src/app/core/llave.service';
-import { Router } from '@angular/router';
-import {Location} from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-init',
@@ -14,7 +14,7 @@ import {Location} from '@angular/common';
 })
 export class InitComponent {
   texto: string = "";
-  link: string | null = "";
+  link: string = "";
   disable: boolean = false;
   count: number = 0;
   readyLink: boolean = false;
@@ -27,11 +27,21 @@ export class InitComponent {
   hostsvalidos: string = "";
   nohay: boolean = false;
   ti: string = "";
+  alterdata: string = "";
+  altertipo: any = "";
 
-  constructor(location: Location, private router: Router, private util: UtilService, private tipo: TipoService, private llave: LlaveService) {
+
+  constructor(private route: ActivatedRoute, location: Location, private router: Router, private util: UtilService, private tipo: TipoService, private llave: LlaveService) {
+    this.alterdata = this.route.snapshot.paramMap.get('data')??"";
+    this.altertipo = this.route.snapshot.paramMap.get('tipo')??"";
     this.ti = util.getparameter('ti');
-    if (this.ti === "") {
-      this.link = Buffer.from(util.getparameter('link'), 'base64').toString();
+    this.link = util.getparameter('link');
+    if (this.ti === "" && this.link === "") {
+      this.link = this.alterdata;
+      this.ti = this.altertipo;
+    }
+    if (this.ti === "" || this.ti==null) {
+      this.link = Buffer.from(this.link, 'base64').toString();
       let host: any;
       let mandaron: boolean;
       try {
@@ -66,8 +76,8 @@ export class InitComponent {
         this.validos();
       }
     } else if (this.ti === "2") {
-      let data: string = util.getparameter('data');
-      let ti: string = util.getparameter('ti');
+      let data: string = util.getparameter('data')===""?this.alterdata:util.getparameter('data');
+      let ti: string = this.ti;
 
       if (llave.valid(data)) {
         this.texto = "Ver los datos";
@@ -119,7 +129,7 @@ export class InitComponent {
     }
   }
   public clicklink(link: string) {
-    window.open(link,"_blank");
+    window.open(link, "_blank");
   }
   public refreshDivs() {
     console.log("refrescando divs");
