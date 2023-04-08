@@ -21,5 +21,11 @@ export class AppComponent {
   }
   public ima() {
     return this.tipo.image;
+  } 
+  public wid() {
+    return this.tipo.wid;
+  } 
+  public hei() {
+    return this.tipo.hei;
   }
 }

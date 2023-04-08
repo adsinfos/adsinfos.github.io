@@ -7,6 +7,22 @@ export class TipoService {
   private tipo: string = "";
   private aux: string = "";
   private ima: string = "";
+  private _wid: string = "";
+  private _hei: string = "";
+
+  public get wid(): string {
+    return this._wid;
+  }
+  public set wid(value: string) {
+    this._wid = value;
+  }
+  public get hei(): string {
+    return this._hei;
+  }
+  public set hei(value: string) {
+    this._hei = value;
+  }
+
   public get image(): string {
     return this.ima;
   }

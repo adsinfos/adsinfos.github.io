@@ -32,15 +32,15 @@ export class InitComponent {
 
 
   constructor(private route: ActivatedRoute, location: Location, private router: Router, private util: UtilService, private tipo: TipoService, private llave: LlaveService) {
-    this.alterdata = this.route.snapshot.paramMap.get('data')??"";
-    this.altertipo = this.route.snapshot.paramMap.get('tipo')??"";
+    this.alterdata = this.route.snapshot.paramMap.get('data') ?? "";
+    this.altertipo = this.route.snapshot.paramMap.get('tipo') ?? "";
     this.ti = util.getparameter('ti');
     this.link = util.getparameter('link');
     if (this.ti === "" && this.link === "") {
       this.link = this.alterdata;
       this.ti = this.altertipo;
     }
-    if (this.ti === "" || this.ti==null) {
+    if (this.ti === "" || this.ti == null) {
       this.link = Buffer.from(this.link, 'base64').toString();
       let host: any;
       let mandaron: boolean;
@@ -69,17 +69,21 @@ export class InitComponent {
         }
 
         this.texto = "Entrar a link";
-        tipo.image="links";
+        tipo.image = "links";
+        tipo.wid = "284";
+        tipo.hei = "96";
       } else {
         this.disable = true;
         this.texto = "No se envio link";
         this.nohay = true;
         this.validos();
-        tipo.image="completo";
+        tipo.image = "completo";
+        tipo.wid = "300";
+        tipo.hei = "120";
       }
-      
+
     } else if (this.ti === "2") {
-      let data: string = util.getparameter('data')===""?this.alterdata:util.getparameter('data');
+      let data: string = util.getparameter('data') === "" ? this.alterdata : util.getparameter('data');
       let ti: string = this.ti;
 
       if (llave.valid(data)) {
@@ -97,8 +101,9 @@ export class InitComponent {
         tipo.setTipo("");
         tipo.setAux("");
       }
-      tipo.image="info";
-
+      tipo.image = "info";
+      tipo.wid = "284";
+      tipo.hei = "96";
     }
   }
   public validos() {
