@@ -79,7 +79,7 @@ export class InitComponent {
         this.validos();
         tipo.image = "completo";
         tipo.wid = "300";
-        tipo.hei = "120";
+        tipo.hei = "0";
       }
 
     } else if (this.ti === "2") {
