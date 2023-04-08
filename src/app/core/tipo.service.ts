@@ -6,6 +6,13 @@ import { Injectable } from '@angular/core';
 export class TipoService {
   private tipo: string = "";
   private aux: string = "";
+  private ima: string = "";
+  public get image(): string {
+    return this.ima;
+  }
+  public set image(value: string) {
+    this.ima = value;
+  }
   constructor() { }
   public getTipo(): string {
     return this.tipo;

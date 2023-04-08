@@ -8,6 +8,7 @@ import { UtilService } from './core/util.service';
 import { InitComponent } from './shared/init/init.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ContratacionComponent } from './shared/contratacion/contratacion.component';
+import { TipoService } from './core/tipo.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { ContratacionComponent } from './shared/contratacion/contratacion.compon
     AppRoutingModule
   ],
   providers: [
-    UtilService, Location],
+    UtilService, 
+    Location, 
+    TipoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

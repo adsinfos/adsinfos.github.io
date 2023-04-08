@@ -69,12 +69,15 @@ export class InitComponent {
         }
 
         this.texto = "Entrar a link";
+        tipo.image="links";
       } else {
         this.disable = true;
         this.texto = "No se envio link";
         this.nohay = true;
         this.validos();
+        tipo.image="completo";
       }
+      
     } else if (this.ti === "2") {
       let data: string = util.getparameter('data')===""?this.alterdata:util.getparameter('data');
       let ti: string = this.ti;
@@ -94,6 +97,7 @@ export class InitComponent {
         tipo.setTipo("");
         tipo.setAux("");
       }
+      tipo.image="info";
 
     }
   }

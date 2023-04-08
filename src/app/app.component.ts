@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TipoService } from './core/tipo.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'adinfo';
-  constructor() {
+  constructor(private tipo: TipoService) {
     const url = window.location.href;
     const hasnewFormat = url.includes('/#/');
     if (!hasnewFormat) {
@@ -17,5 +18,8 @@ export class AppComponent {
       }
     }
 
+  }
+  public ima() {
+    return this.tipo.image;
   }
 }
