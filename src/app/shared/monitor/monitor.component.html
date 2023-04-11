@@ -1,0 +1,39 @@
+<div id="superior" *ngIf="showSuperior"></div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col" class="table-primary" colspan="4">MONITOREO HASTA LAS {{divisas.fecha}}</th>
+        </tr>
+        <tr>
+            <th scope="col" class="table-primary">Nombre</th>
+            <th scope="col" class="table-primary">URL</th>
+            <th scope="col" class="table-primary">HTTP</th>
+            <th scope="col" class="table-primary">PING</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let fila of divisas.lista">
+            <td align="left">
+                {{fila.nombre}}
+            </td>
+            <td align="left">
+                {{fila.url}}
+            </td>
+            <td align="left">
+                {{fila.http}}
+            </td>
+            <td align="left">
+                {{fila.ping}}
+            </td>
+
+        </tr>
+
+    </tbody>
+
+</table>
+
+<div id="inferior" *ngIf="showInferior"></div>
+<button type="button" class="btn btn-primary btn-lg px-4 gap-3" (click)="regresar()">Regresar</button>

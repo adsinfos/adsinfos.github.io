@@ -126,6 +126,28 @@ export class InitComponent {
       tipo.image = "tipos";
       tipo.wid = "284";
       tipo.hei = "96";
+    } else if (this.ti === "4") {
+      let data: string = util.getparameter('data') === "" ? this.alterdata : util.getparameter('data');
+      let ti: string = this.ti;
+
+      if (llave.valid(data)) {
+        this.texto = "Ver monitoreo";
+        this.disable = false;
+        this.hostin = "ver monitoreo de Sistemas";
+        this.link = "/#/monitor";
+        tipo.setTipo(ti);
+        tipo.setAux(data);
+      } else {
+        this.texto = "Datos no validos";
+        this.disable = true;
+        this.hostin = "Datos no validos";
+        this.link = "/#/error";
+        tipo.setTipo("");
+        tipo.setAux("");
+      }
+      tipo.image = "monitor";
+      tipo.wid = "284";
+      tipo.hei = "96";
     }
   }
   public validos() {
@@ -157,6 +179,8 @@ export class InitComponent {
       this.router.navigate(['/contratacion']);
     } else if (this.tipo.getTipo() == "3") {
       this.router.navigate(['/tipos']);
+    } else if (this.tipo.getTipo() == "4") {
+      this.router.navigate(['/monitor']);
     } else {
       window.location.href = this.link != null ? this.link : '';
     }

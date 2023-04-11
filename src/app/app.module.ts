@@ -10,13 +10,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { ContratacionComponent } from './shared/contratacion/contratacion.component';
 import { TipoService } from './core/tipo.service';
 import { TiposComponent } from './shared/tipos/tipos.component';
+import { MonitorComponent } from './shared/monitor/monitor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InitComponent,
     ContratacionComponent,
-    TiposComponent
+    TiposComponent,
+    MonitorComponent
   ],
   imports: [
     BrowserModule,
