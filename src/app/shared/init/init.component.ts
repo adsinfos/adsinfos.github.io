@@ -104,6 +104,28 @@ export class InitComponent {
       tipo.image = "info";
       tipo.wid = "284";
       tipo.hei = "96";
+    } else if (this.ti === "3") {
+      let data: string = util.getparameter('data') === "" ? this.alterdata : util.getparameter('data');
+      let ti: string = this.ti;
+
+      if (llave.valid(data)) {
+        this.texto = "Ver los datos de las divisas";
+        this.disable = false;
+        this.hostin = "ver datos Divisas";
+        this.link = "/#/tipos";
+        tipo.setTipo(ti);
+        tipo.setAux(data);
+      } else {
+        this.texto = "Datos no validos";
+        this.disable = true;
+        this.hostin = "Datos no validos";
+        this.link = "/#/error";
+        tipo.setTipo("");
+        tipo.setAux("");
+      }
+      tipo.image = "tipos";
+      tipo.wid = "284";
+      tipo.hei = "96";
     }
   }
   public validos() {
@@ -133,6 +155,8 @@ export class InitComponent {
       }, 1000);
     } else if (this.tipo.getTipo() == "2") {
       this.router.navigate(['/contratacion']);
+    } else if (this.tipo.getTipo() == "3") {
+      this.router.navigate(['/tipos']);
     } else {
       window.location.href = this.link != null ? this.link : '';
     }

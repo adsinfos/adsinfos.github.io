@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContratacionComponent } from './shared/contratacion/contratacion.component';
 import { InitComponent } from './shared/init/init.component';
+import { TiposComponent } from './shared/tipos/tipos.component';
 
 const routes: Routes = [
   { path: '', component: InitComponent }, 
   { path: 'contratacion', component: ContratacionComponent },
+  { path: 'tipos', component: TiposComponent },
   { path: ':data', component: InitComponent }, 
   { path: ':data/:tipo', component: InitComponent }
 
