@@ -2,27 +2,45 @@
 <h6 class="mb-3 fw-normal" *ngIf="cuando">Espera por favor..{{resto()}} segundos</h6>
 <button type="button" class="btn btn-primary" [disabled]="disable" (click)="click()" *ngIf="!nohay">{{texto}}</button>
 <div *ngIf="nohay">
-  <div class="col-lg-6 mx-auto">
-    <p class="lead mb-4">Servicio de redireccion de links de noticias, links de wordpress y Informacion personalizada de
-      sitios sin base de datos te redireccionamos a la informacion solicitada solo por publicidad. No pedimos datos privados,
-      ni solicitamos instalacion de apps, ni nada solo redireccionamos a la informacion requerida. Ve nuestros ejemplos:</p>
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <p class="lead mb-4"><b>Link</b></p>
-          <button
-            (click)="clicklink('https://adsinfos.github.io/#/?link=aHR0cHM6Ly93d3cuZXNwaW5vZi5jb20vc2VsZWNjaW9uL21lZGlhbWFya3QtY2VsZWJyYS1zdS1hbml2ZXJzYXJpby1yZWJhamFuZG8tbXVjaGlzaW1vcy1mdW5rb3MtbGxldmF0ZS1tZWpvcmVzLWZpZ3VyYXMtc3Rhci13YXJzLW1hcnZlbC1tdWNoby1hLXByZWNpby1kZXJyaWJv')"
-            type="button" class="btn btn-info btn-lg px-4 gap-3">click aca</button>
-        </div>
-        <div class="col">
-          <p class="lead mb-4"><b>Informacion</b></p>
-          <button
-            (click)="clicklink('https://adsinfos.github.io/#/?data=eyJhbGciOiJSUzI1NiJ9.eyJleHAiOjE3NDMzNjA3OTEsInYiOiJ7XCJjdWNlXCI6XCIyMy0xMjA1LTAwLTEzMTU5NzEtMS0yXCIsXCJlbnRpZGFkXCI6XCJHb2JpZXJubyBBdXRvbm9tbyBNdW5pY2lwYWwgRGUgRWwgQWx0b1wiLFwidGlwb1wiOlwiQmllbmVzXCIsXCJtb2RhbGlkYWRcIjpcIkNNXCIsXCJvYmpldG9cIjpcIlNlcnZpY2lvcyBEZSBTYWx1ZCBVbml2ZXJzYWwgWSBHcmF0dWl0YSAtIFN1cyAoQWRxdWlzaWNpb24gRGUgUGFwZWwgUHJpbnRlciBUaXBvIFYgUGFyYSBFY29ncmFmaWEgRGVsIEhvc3BpdGFsIE11bmljaXBhbCBNb2RlbG8gQ29yZWEpXCIsXCJzdWJhc3RhXCI6XCJOb1wiLFwicHJlc2VudGFjaW9uXCI6XCIwMy8wNC8yMDIzXCIsXCJwdWJsaWNhY2lvblwiOlwiMjkvMDMvMjAyM1wifSJ9.kDng_qIaVLw2oJ-iK24f7uOmx3rJ4LYcvz7En6uji0ILCu2_e_M9jpos-2xLypocaPXWh0xTw47U9_gASSnbBWtYzWOU9raSxgCRC7FWVx-1umeYSeF2o2FNNuwaN0rSKH4mtNaMQNB7yE8eQPVKahlSil8x_pWW_N86wPOVTJPPCt-RYBuCi9ay9hhH29aRYP15Utticf9-SaI4GZ-aV8sgeiLDRueu1YSVmEsewz3q5Z5XGbV60DTZIZLXhtzySOMQS_7XV8dVsxJbZkuetIuxaeX4wh3P532pwEyEOpV1GQPMm648fywOAsb6U2FZ8PwdUVfqF21ewtoomtgKBw&ti=2')"
-            type="button" class="btn btn-info btn-lg px-4 gap-3">click aca</button>
-        </div>
-      </div>
-    </div>
-
+  <div class="col-lg-15 mx-auto" *ngIf="tipo.opcion=='home'">
+    <p class="lead mb-4">Ofrecemos un servicio de redirección de enlaces de noticias,
+      sitios web de WordPress e información personalizada de páginas
+      sin base de datos. Solo por ver nuestra publicidad, te llevamos
+      a la información que buscas. No te pedimos ningún dato privado,
+      ni te obligamos a instalar ninguna aplicación, ni nada más.
+      Solo te redirigimos a la información que necesitas. Todo publicado por nuestro Bot de Telegram: </p>
+    <button (click)="clicklink('https://t.me/Idotodobot')" type="button" class="btn btn-primary btn-lg px-4 gap-3">Bot
+      de Telegram</button>
+  </div>
+  <div class="col-lg-15 mx-auto" *ngIf="tipo.opcion=='links'">
+    <p class="lead mb-4">Nuestro servicio ofrece la posibilidad de acceder a las páginas seleccionadas por usted con un solo clic. Sin embargo, para poder mantener este servicio gratuito y de calidad, le pedimos que vea un breve anuncio antes de ser redirigido a la noticia o link que desea consultar. De esta forma, nos ayuda a seguir ofreciéndole el mejor contenido en línea.  </p>
+    <button
+      (click)="clicklink('https://adsinfos.github.io/#/aHR0cHM6Ly93d3cuY3JvbmlzdGEuY29tL2luZm90ZWNobm9sb2d5L2FjdHVhbGlkYWQvZXMtbWFzLXBlbGlncm9zYS1xdWUtZWxvbi1tdXNrLXZvbHZpby1hLWFkdmVydGlyLXNvYnJlLWVsLXBvZGVyLWRlLWxhLWludGVsaWdlbmNpYS1hcnRpZmljaWFsLw')"
+      type="button" class="btn btn-primary btn-lg px-4 gap-3">Ejemplo de Link</button>
+  </div>
+  <div class="col-lg-15 mx-auto" *ngIf="tipo.opcion=='infosicoes'">
+    <p class="lead mb-4"> En este sitio web ofrecemos información de las convocatorias publicadas en el SICOES - Sistema de Contrataciones Estatales de Bolivia, sin necesidad de acceder a una base de datos y con los datos esenciales para que el usuario pueda dirigirse al portal oficial del SICOES y obtener más información sobre el proceso de contratación que le interese. Nuestro objetivo es facilitar la búsqueda y el acceso a las oportunidades de negocio que ofrece el Estado boliviano a los proveedores nacionales e internacionales. Solo le pedimos que vea algo de publicidad en nuestro sitio web para poder mantener este servicio gratuito y de calidad.</p>
+    <button
+      (click)="clicklink('https://adsinfos.github.io/#/eyJhbGciOiJSUzI1NiJ9.eyJleHAiOjE3NDUxMTU5MzcsInYiOiJ7XCJjdWNlXCI6XCIyMy0xMjAxLTAwLTEzMjY2NTEtMS0xXCIsXCJlbnRpZGFkXCI6XCJHb2JpZXJubyBBdXRvbm9tbyBNdW5pY2lwYWwgRGUgTGEgUGF6XCIsXCJ0aXBvXCI6XCJTZXJ2aWNpb3MgR2VuZXJhbGVzXCIsXCJtb2RhbGlkYWRcIjpcIkFOUEVcIixcIm9iamV0b1wiOlwiU2VydmljaW8gRGUgTGltcGllemEgUGFyYSBFbCBDZW50cm8gRGUgSGVtb2RpYWxpc2lzIERlbCBIb3NwaXRhbCBNdW5pY2lwYWwgTGEgTWVyY2VkIEdlc3Rpb24gMjAyXCIsXCJzdWJhc3RhXCI6XCJTaVwiLFwicHJlc2VudGFjaW9uXCI6XCIyNS8wNC8yMDIzXCIsXCJwdWJsaWNhY2lvblwiOlwiMTkvMDQvMjAyM1wifSJ9.upF7CiyrinXH5-klJjUbax4hX-P6g8ie2fh_hFOeGQi4Hvi-4vIZE_C7zrywMv0hPY7xyDNPt7AuJI_pjS8Qka3-omPsWfA_Gv3hH-QP0Zvnmegdtv6r2crakmqiC2hsezWrem4pua9APsg5CDm_H4CD6snlxw5kpVLBhyx7duVoVk5MR0xVto_EzezA3mh0uQ0b34ZMMAhLpf3aZNYN-Qln6PC-GqI_SPrKRjEkf6oCIJPfSOZzWMwXZPbzbWUNc02MHpoTul0X5j_DGQe59ueSjGMlc0Jx2vD1F1r9fFxlL_zTEMdHrBKEzXFhiJil_8nGJOVnmKPxmdblEKsWqg/2')"
+      type="button" class="btn btn-primary btn-lg px-4 gap-3">Ejemplo de Info</button>
+  </div>
+  <div class="col-lg-15 mx-auto" *ngIf="tipo.opcion=='tipos'">
+    <p class="lead mb-4"> Le ofrecemos información actualizada sobre el valor de las divisas en los países que le interesan, todo a cambio de un poco de publicidad. Manténgase al día con todas las divisas de su país, incluyendo el oro y la plata. </p>
+    <button
+      (click)="clicklink('https://adsinfos.github.io/#/eyJhbGciOiJSUzI1NiJ9.eyJleHAiOjE3NDUxMDc3NTYsInYiOiJ7XCJsaXN0YVwiOltcIkVTVEFET1MgVU5JRE9TfERPTEFSIFZFTlRBfFVTRC5WRU5UQXw2Ljk2fFwiLFwiRVNUQURPUyBVTklET1N8RE9MQVIgQ09NUFJBfFVTRC5DT01QUkF8Ni44NnxcIixcIlVOSU9OIEVVUk9QRUF8RVVST3xFVVJ8Ny41MTQ0M3wwLjkxMjkxXCIsXCJKQVBPTnxZRU58SlBZfDAuMDUwOTJ8MTM0LjcxMDAwXCIsXCJBUkFCSUEgU0FVRElUQXxSSVlBTCBTQVVEw418U0FSfDEuODI4NzV8My43NTEyMFwiLFwiQVJHRUxJQXxESU5BUiBBUkdFTElOT3xEWkR8MC4wNTA2OHwxMzUuMzQ5NTBcIixcIkFSR0VOVElOQXxQRVNPfEFSU3wwLjAzMTU0fDIxNy40NzU4MFwiLFwiQVVTVFJBTElBfETDk0xBUnxBVUR8NC42MDU3OXwxLjQ4OTQzXCIsXCJCUkFTSUx8UkVBTHxCUkx8MS4zNTAzOXw1LjA4MDAwXCIsXCJDQU5BREF8RMOTTEFSfENBRHw1LjA5NDY5fDEuMzQ2NTBcIixcIkNISUxFfFBFU098Q0xQfDAuMDA4NjR8Nzk0LjMyMDAwXCIsXCJDT0xPTUJJQXxQRVNPfENPUHwwLjAwMTUyfDQsNTI3LjU3MDAwXCIsXCJDT1JFQSBERUwgU1VSfFdPTnxLUld8MC4wMDUxN3wxLDMyNS43MDAwMFwiLFwiQ09TVEEgUklDQXxDT0xPTiBDT1NUQVJSSUNFTlNFfENSQ3wwLjAxMjgzfDUzNC43OTAwMFwiLFwiUkVQVUJMSUNBIENIRUNBfENPUk9OQSBDSEVDQXxDWkt8MC4zMjA3M3wyMS4zODg5MFwiLFwiRElOQU1BUkNBfENPUk9OQXxES0t8MS4wMDgzOXw2LjgwMjkwXCIsXCJFQ1VBRE9SfETDk0xBUnxVU0R8Ni44NjAwMHwxLjAwMDAwXCIsXCJFTUlSQVRPUyBBUkFCRVN8RElSSEFNfEFFRHwxLjg2Nzg5fDMuNjcyNjBcIixcIkZJTElQSU5BU3xQRVNPIEZJTElQSU5PfFBIUHwwLjEyMjAyfDU2LjIyMDAwXCIsXCJIQUlUw418R09VUkRFfEhUR3wwLjA0NDU2fDE1My45NTAxMFwiLFwiSE9ORyBLT05HfETDk0xBUnxIS0R8MC44NzM5M3w3Ljg0OTYwXCIsXCJJTkRJQXxSVVBJQXxJTlJ8MC4wODM0Mnw4Mi4yMzEyMFwiLFwiSU5ET05FU0lBfFJVUElBIElORE9ORVNJQXxJRFJ8MC4wMDA0NnwxNCw5ODEuNTAwMDBcIixcIklTUkFFTHxOVUVWTyBTw4lRVUVMfElMU3wxLjg4MTYyfDMuNjQ1ODBcIixcIk1BTEFTSUF8UklOR0dJVCBNQUxBWU98TVlSfDEuNTQ0NzB8NC40NDEwMFwiLFwiTUVYSUNPfFBFU098TVhOfDAuMzc5ODR8MTguMDYwMDBcIixcIk5PUlVFR0F8Q09ST05BfE5PS3wwLjY0ODcwfDEwLjU3NTAwXCIsXCJQQU5BTcOBfEJBTEJPQXxQQUJ8Ni44NjAwMHwxLjAwMDAwXCIsXCJQQVJBR1VBWXxHVUFSQU5JfFBZR3wwLjAwMDk2fDcsMTMyLjMwMDAwXCIsXCJQRVJVfE5VRVZPIFNPTHxQRU58MS44MTcxMnwzLjc3NTIwXCIsXCJSRUlOTyBVTklET3xMSUJSQXxHQlB8OC41MzM4MnwwLjgwMzg2XCIsXCJSRVDDmkJMSUNBIERPTUlOSUNBTkF8UEVTTyBET01JTklDQU5PfERPUHwwLjEyNTU1fDU0LjYzOTAwXCIsXCJSRVAuUE9QVUxBUiBDSElOQXxZVUFOIFJFTk1JTkJJIE9GRlNIT1JFfENOSHwwLjk5NTIwfDYuODkzMTBcIixcIlJVU0lBfFJVQkxPIFJVU098UlVCfDAuMDgzOTN8ODEuNzMzOTBcIixcIlNJTkdBUFVSfETDk0xBUnxTR0R8NS4xNDAxMnwxLjMzNDYwXCIsXCJTVUTDgUZSSUNBfFJBTkR8WkFSfDAuMzc3MjN8MTguMTg1MjBcIixcIlNVRUNJQXxDT1JPTkF8U0VLfDAuNjYyOTh8MTAuMzQ3MjBcIixcIlNVSVpBfEZSQU5DT3xDSEZ8Ny42NDI2MHwwLjg5NzYwXCIsXCJUQUlMQU5ESUF8VEhBSSBCQUhUfFRIQnwwLjE5OTIxfDM0LjQzNjAwXCIsXCJUQUlXQU58RMOTTEFSfFRXRHwwLjIyNDM1fDMwLjU3NzAwXCIsXCJUw5pORVp8RElOQVIgVFVORUNJTk98VE5EfDIuMjEzNDB8My4wOTkzMFwiLFwiVFVSUVXDjUF8TElSQSBUVVJDQXxUUll8MC4zNTM2NXwxOS4zOTc5MFwiLFwiVVJVR1VBWXxQRVNPfFVZVXwwLjE3NjIxfDM4LjkzMTUwXCIsXCJWRU5FWlVFTEF8Qk9MSVZBUiBESUdJVEFMfFZFU3wwLjI3OTgyfDI0LjUxNTkwXCIsXCJWSUVUTkFNfERPTkd8Vk5EfDAuMDAwMjl8MjMsNTA2LjAwMDAwXCIsXCJ8REVSRUNITyBFU1BFQ0lBTCBERSBHSVJPfFVTRC9ELkUuRy58fDEuMzQ2MTlcIixcInxVTklEQUQgREUgRk9NRU5UTyBERSBWSVZJRU5EQXxCcy9VRlZ8fDIuNDMwMzFcIixcIk9ST3xPTlpBIFRST1kgT1JPfFVTRC4vTy5ULkYufDEsOTk2LjQ0MDAwfFwiLFwiUExBVEF8T05aQSBUUk9ZIFBMQVRBfFVTRC4vTy5ULkYufDI1LjM1MzMwfFwiXSxcImZlY2hhXCI6XCJUQUJMQSBERSBDT1RJWkFDSU9ORVMgREVMIDIwIERFIEFCUklMIERFIDIwMjNcIn0ifQ.DjyHnboJS2ML4jX32BK0KZc8K2f5p40rwXBZhXsShp-NUFDc4pMILGdPtDKV6W9LSGN8p68TZbKWRsHEWxUEcDLXOptgEympZlME46Oba3LHgqw6W7oh89qaaPT2AU1_Fh_FpMA1V9uwFAsGay0UNUsU_aPG_KOrVBCzBiLu5xKwEPtxpjiAG9A1r8UumTctPIEEYifm4_CgiDW83Jmg3rZ0J1VgazhB9rrY8Ej8rhQ1yM8Jg-MRVttYtNbaIGfbM9_8hrMEQ3v5p50Ck59DZBvlKsyOAwV6l1RQcY1Ryie58MyYG8odsAdtRJGTmyBgrfdYMaBFIME0x_otj8K-Qw/3')"
+      type="button" class="btn btn-primary btn-lg px-4 gap-3">Ejemplo de Divisas</button>
+  </div>
+  <div class="col-lg-15 mx-auto" *ngIf="tipo.opcion=='acerca'">
+    <p class="lead mb-4">Somos una empresa que ofrece información personalizada a través de canales de Telegram para usuarios interesados en estar al día con las últimas noticias, divisas, monitoreo de sitios web y convocatorias públicas. Todo ello de forma gratuita y con la garantía de calidad y veracidad que nos caracteriza. </p>
+    <button (click)="clicklink('https://t.me/Idotodobot')" type="button"
+      class="btn btn-primary btn-lg px-4 gap-3">Bot de Telegram</button>
+  </div>
+  <div class="col-lg-15 mx-auto" *ngIf="tipo.opcion=='monitor'">
+    <p class="lead mb-4">Monitoreo de servicios publicos en tu pais que muestra si los servicio pprincipales y mas
+      usados por la poblacion estan arriba y funcionales o no </p>
+    <button
+      (click)="clicklink('https://adsinfos.github.io/#/eyJhbGciOiJSUzI1NiJ9.eyJleHAiOjE3NDUxMDc3NjAsInYiOiJ7XCJmZWNoYVwiOlwiMjAyMy0wNC0xOVQyMDowOToyMC40MTc0MjctMDQ6MDBcIixcImxpc3RhXCI6W3tcImlkXCI6MSxcImh0dHBcIjpcIkNPUlJFQ1RPXCIsXCJwaW5nXCI6XCJDT1JSRUNUT1wiLFwibm9tYnJlXCI6XCJTSUdFUFwiLFwidXJsXCI6XCJodHRwczovL3NpZ2VwLmdvYi5iby9zZWd1cmlkYWQvZmFjZXMvaW5ncmVzby5qc3B4XCJ9LHtcImlkXCI6MixcImh0dHBcIjpcIkNPUlJFQ1RPXCIsXCJwaW5nXCI6XCJDT1JSRUNUT1wiLFwibm9tYnJlXCI6XCJDSVVEQURBTklBIERJR0lUQUxcIixcInVybFwiOlwiaHR0cHM6Ly9jdWVudGEuY2l1ZGFkYW5pYWRpZ2l0YWwuYWdldGljLmdvYi5iby9cIn0se1wiaWRcIjozLFwiaHR0cFwiOlwiQ09SUkVDVE9cIixcInBpbmdcIjpcIkNPUlJFQ1RPXCIsXCJub21icmVcIjpcIlNJQ09FU1wiLFwidXJsXCI6XCJodHRwczovL3d3dy5zaWNvZXMuZ29iLmJvL3BvcnRhbC9pbmRleC5waHBcIn0se1wiaWRcIjo0LFwiaHR0cFwiOlwiQ09SUkVDVE9cIixcInBpbmdcIjpcIkNPUlJFQ1RPXCIsXCJub21icmVcIjpcIkRFQ0xBUkFDSU9ORVMgSlVSQURBUyBDT05UUkFMT1JJQVwiLFwidXJsXCI6XCJodHRwczovL2RqYnIuY29udHJhbG9yaWEuZ29iLmJvL1wifSx7XCJpZFwiOjUsXCJodHRwXCI6XCJDT1JSRUNUT1wiLFwicGluZ1wiOlwiQ09SUkVDVE9cIixcIm5vbWJyZVwiOlwiT0ZJQ0lOQSBWSVJUVUFMXCIsXCJ1cmxcIjpcImh0dHBzOi8vZGNsYXJvLmltcHVlc3Rvcy5nb2IuYm8vTG9naW4uYXNweFwifSx7XCJpZFwiOjYsXCJodHRwXCI6XCJDT1JSRUNUT1wiLFwicGluZ1wiOlwiQ09SUkVDVE9cIixcIm5vbWJyZVwiOlwiT0ZJQ0lOQSBWSVJUVUFMIE9WXCIsXCJ1cmxcIjpcImh0dHBzOi8vb3YuaW1wdWVzdG9zLmdvYi5iby9wYWdpbmFzL3B1YmxpY28vTG9naW4uYXNweFwifV19In0.woTDaVFrne_L-pv4ms5888wTjXjK-eSBQhLgRme4Nmg_8e15J2xY4uzf_CG3xoD0HlZ2s2y6afjZCIjRQR8txog9EDC_QqAHyG95tIrNeMFeJP7qhFPnbQHDla7I_JVhcjB8-rR-qxj92jpENRAh1wikgxYSaeJOSFcnobkaRgFN09sP84iJHOS6DZgHcGHVGFIWVOOD2Tf8yLQFYhA8B_7PpSg4nZfqvekUeaTplegrrIzE6Bhq8AscA7RKE_y87D7LaPHZmsG9YbX0-Zif0cwtijo-Q7nK8SzRR-tBZSqKhe9P_a5vaZHhwKENEW3qYtm2IykZcsKed__VvUE87A/4')"
+      type="button" class="btn btn-primary btn-lg px-4 gap-3">Ejemplo de Monitoreo</button>
   </div>
 </div>
 <div id="inferior" *ngIf="showInferior"></div>

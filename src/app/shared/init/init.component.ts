@@ -31,7 +31,7 @@ export class InitComponent {
   altertipo: any = "";
 
 
-  constructor(private route: ActivatedRoute, location: Location, private router: Router, private util: UtilService, private tipo: TipoService, private llave: LlaveService) {
+  constructor(private route: ActivatedRoute, location: Location, private router: Router, private util: UtilService, public tipo: TipoService, private llave: LlaveService) {
     this.alterdata = this.route.snapshot.paramMap.get('data') ?? "";
     this.altertipo = this.route.snapshot.paramMap.get('tipo') ?? "";
     this.ti = util.getparameter('ti');
@@ -77,9 +77,9 @@ export class InitComponent {
         this.texto = "No se envio link";
         this.nohay = true;
         this.validos();
-        tipo.image = "completo";
-        tipo.wid = "300";
-        tipo.hei = "130";
+        tipo.image = "completo2";
+        tipo.wid = "236";
+        tipo.hei = "159";
       }
 
     } else if (this.ti === "2") {

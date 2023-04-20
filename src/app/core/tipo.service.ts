@@ -9,6 +9,14 @@ export class TipoService {
   private ima: string = "";
   private _wid: string = "";
   private _hei: string = "";
+  private _opcion: string = "";
+  
+  public get opcion(): string {
+    return this._opcion;
+  }
+  public set opcion(value: string) {
+    this._opcion = value;
+  }
 
   public get wid(): string {
     return this._wid;

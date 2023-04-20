@@ -1,9 +1,57 @@
+<nav *ngIf="ima()=='completo2'" id="nav" class="navbar navbar-expand-lg navbar-light bg-dark text-white">
+    <div class="container-fluid"> <img class="logo" src="assets/images/{{ima()}}.png" alt="image" width="75"
+            height="50">
+
+        <button id="but" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a id="home" (click)="carga('home')" class="nav-link active text-white" aria-current="page"
+                        href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a id="links" (click)="carga('links')" class="nav-link text-white" href="#">Links</a>
+                </li>
+                <li class="nav-item">
+                    <a id="infosicoes" (click)="carga('infosicoes')" class="nav-link text-white" href="#">Info
+                        Sicoes</a>
+                </li>
+                <li class="nav-item">
+                    <a id="tipos" (click)="carga('tipos')" class="nav-link text-white" href="#">Info Tipos de Cambio</a>
+                </li>
+                <li class="nav-item">
+                    <a id="monitor" (click)="carga('monitor')" class="nav-link text-white" href="#">Monitoreo de
+                        Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a id="acerca" (click)="carga('acerca')" class="nav-link text-white" href="#">Acerca de</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
 <div class="container text-center">
     <div class="row">
         <div class="col">
             <img class="logo" src="assets/images/{{ima()}}.png" alt="image" width="{{wid()}}" height="{{hei()}}">
+
             <router-outlet></router-outlet>
 
         </div>
     </div>
 </div>
+<br>
+<br>
+<footer *ngIf="ima()=='completo2'" class="bg-light text-center text-lg-start">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Copyright:
+        <a class="text-dark" href="https://adsinfos.github.io/">adsinfos.github.io</a>
+    </div>
+    <!-- Copyright -->
+</footer>
