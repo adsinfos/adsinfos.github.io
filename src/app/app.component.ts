@@ -29,6 +29,9 @@ export class AppComponent {
   public hei() {
     return this.tipo.hei;
   }
+  public nohay() {
+    return this.tipo.image=="completo";
+  }
   public carga(pagina: string) {
     this.opcion = pagina;
     let url = document.getElementById(this.opcion) as HTMLAnchorElement;
