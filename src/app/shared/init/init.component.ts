@@ -73,6 +73,7 @@ export class InitComponent {
         tipo.wid = "284";
         tipo.hei = "96";
       } else {
+        tipo.image = "completo";
         window.location.href = "http://home.adsinfo.me";
       }
 
