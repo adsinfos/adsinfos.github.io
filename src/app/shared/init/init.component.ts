@@ -73,13 +73,7 @@ export class InitComponent {
         tipo.wid = "284";
         tipo.hei = "96";
       } else {
-        this.disable = true;
-        this.texto = "No se envio link";
-        this.nohay = true;
-        this.validos();
-        tipo.image = "completo2";
-        tipo.wid = "236";
-        tipo.hei = "159";
+        window.location.href = "http://home.adsinfo.me";
       }
 
     } else if (this.ti === "2") {
