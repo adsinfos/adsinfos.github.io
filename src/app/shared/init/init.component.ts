@@ -74,6 +74,7 @@ export class InitComponent {
         tipo.hei = "96";
       } else {
         tipo.image = "completo";
+        this.nohay = true;
         window.location.href = "http://home.adsinfo.me";
       }
 
