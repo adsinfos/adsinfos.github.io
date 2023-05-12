@@ -21,7 +21,7 @@ export class InitComponent {
   hostin: string = "";
   showInferior: boolean = true;
   showSuperior: boolean = true;
-  maximo: number = 2;
+  maximo: number = 5;
   cuando: boolean = false;
 
   hostsvalidos: string = "";
