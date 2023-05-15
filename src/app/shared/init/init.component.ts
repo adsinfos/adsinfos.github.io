@@ -156,13 +156,14 @@ export class InitComponent {
   public click() {
     if (!this.readyLink) {
       this.disable = true;
+      this.cuando = true;
+
       const intervalId = setInterval(() => {
         this.count++;
-        this.cuando = true;
         if (this.count === this.maximo) {
-          clearInterval(intervalId);
+          //clearInterval(intervalId);
           this.disable = false;
-          this.count = 0;
+          //this.count = 0;
           this.readyLink = true;
           this.texto = "Ir a " + this.hostin;
           this.cuando = false;
