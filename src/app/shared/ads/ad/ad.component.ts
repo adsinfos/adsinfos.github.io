@@ -10,6 +10,7 @@ import { AdsService } from 'src/app/core/ads.service';
 export class AdComponent implements AfterViewInit {
   @ViewChild("divad") divad?: ElementRef;
   @Input() tipo!: number;
+  @Input() cargaren!: number;
   atOptions: any = {};
   constructor(
     private adsservice: AdsService,
@@ -20,7 +21,8 @@ export class AdComponent implements AfterViewInit {
   }
   ngAfterViewInit() {
     let time: number = 0;
-    time = this.getRandomMultipleOf20();
+    //time = this.getRandomMultipleOf20();
+    time = this.cargaren * 1000;
     setTimeout(() => { this.insertScript(); }, time);
     //this.insertScript();
   }
