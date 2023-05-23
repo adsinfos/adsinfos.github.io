@@ -43,6 +43,9 @@ export class ContratacionComponent {
       clearInterval(this.intervalId);
     }
   }
+  ir() {
+    window.location.href = "https://convocatorias.adsinfo.me";
+  }
   regresar() {
     clearInterval(this.intervalId);
     window.history.back();
