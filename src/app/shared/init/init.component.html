@@ -1,9 +1,9 @@
 <div id="superior" *ngIf="showSuperior" class="div-300-250">
-    <ad [tipo]="1" [cargaren]="0" ></ad>
+    <ad [tipo]="1" [cargaren]="1" ></ad>
 </div>
 <h6 class="mb-3 fw-normal" *ngIf="cuando">Espera por favor..{{resto()}} segundos</h6>
 <button type="button" class="btn btn-primary" [disabled]="disable" (click)="click()" *ngIf="!nohay">{{texto}}</button>
 <br><br>
 <div id="inferior" *ngIf="showInferior" class="div-300-250">
-    <ad [tipo]="1"  [cargaren]="1" ></ad>
-</div>
+    <ad [tipo]="1"  [cargaren]="0" ></ad>
+</div> 
