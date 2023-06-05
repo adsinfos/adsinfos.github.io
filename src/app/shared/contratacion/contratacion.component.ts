@@ -1,7 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { TipoService } from 'src/app/core/tipo.service';
 import { Buffer } from 'buffer';
-import { ConfigurationSense } from '../ads/adsense/configuration';
 
 @Component({
   selector: 'app-contratacion',
@@ -15,15 +14,8 @@ export class ContratacionComponent {
   showInferior: boolean = true;
   showSuperior: boolean = true;
   intervalId: any;
-  config!: ConfigurationSense;
-
   constructor(private tipo: TipoService) {
-    this.config = new ConfigurationSense(
-      'ca-pub-9676834375313066',
-      6900272380,
-      'auto',
-      true
-    );
+
   }
   private ngOnInit() {
     let data: string = this.tipo.getAux();
