@@ -12,6 +12,8 @@ import { TipoService } from './core/tipo.service';
 import { TiposComponent } from './shared/tipos/tipos.component';
 import { MonitorComponent } from './shared/monitor/monitor.component';
 import { AdComponent } from './shared/ads/ad/ad.component';
+import { SenseComponent } from './shared/ads/sense/sense.component';
+import { TestComponent } from './shared/test/test.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { AdComponent } from './shared/ads/ad/ad.component';
     ContratacionComponent,
     TiposComponent,
     MonitorComponent,
-    AdComponent
+    AdComponent,
+    SenseComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,

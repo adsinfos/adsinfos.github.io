@@ -4,15 +4,17 @@ import { ContratacionComponent } from './shared/contratacion/contratacion.compon
 import { InitComponent } from './shared/init/init.component';
 import { TiposComponent } from './shared/tipos/tipos.component';
 import { MonitorComponent } from './shared/monitor/monitor.component';
+import { TestComponent } from './shared/test/test.component';
 
 const routes: Routes = [
   { path: '', component: InitComponent },
   { path: 'contratacion', component: ContratacionComponent },
   { path: 'tipos', component: TiposComponent },
   { path: 'monitor', component: MonitorComponent },
+  { path: 'test', component: TestComponent },
   { path: ':data', component: InitComponent },
   { path: ':data/:tipo', component: InitComponent }
-
+  
 ];
 
 @NgModule({
