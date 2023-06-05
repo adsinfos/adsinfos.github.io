@@ -1,9 +1,19 @@
-<div id="superior" *ngIf="showSuperior" class="div-300-250">
-    <ad [tipo]="1" [cargaren]="1" ></ad>
+<div id="superior" *ngIf="showSuperior" class="div-sense1">
+    <div *ngIf="this.tipo.motorad()=='adsterra'">
+        <ad [tipo]="1" [cargaren]="1"></ad>
+    </div>
+    <div *ngIf="this.tipo.motorad()=='google'">
+        <adsenseinfo [config]="config"></adsenseinfo>
+    </div>
 </div>
 <h6 class="mb-3 fw-normal" *ngIf="cuando">Espera por favor..{{resto()}} segundos</h6>
 <button type="button" class="btn btn-primary" [disabled]="disable" (click)="click()" *ngIf="!nohay">{{texto}}</button>
 <br><br>
-<div id="inferior" *ngIf="showInferior" class="div-300-250">
-    <ad [tipo]="1"  [cargaren]="0" ></ad>
-</div> 
+<div id="inferior" *ngIf="showInferior" class="div-sense1">
+    <div *ngIf="this.tipo.motorad()=='adsterra'">
+        <ad [tipo]="1" [cargaren]="2"></ad>
+    </div>
+    <div *ngIf="this.tipo.motorad()=='google'">
+        <adsenseinfo [config]="config"></adsenseinfo>
+    </div>
+</div>

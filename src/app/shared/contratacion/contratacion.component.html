@@ -1,100 +1,103 @@
-<div id="superior" *ngIf="showSuperior" class="div-320-50">
-    <ad [tipo]="3" [cargaren]="0" ></ad>
-
+<div id="superior" *ngIf="showSuperior" class="div-sense1">
+    <adsenseinfo [config]="config"></adsenseinfo>
 </div>
 <div class="table-responsive">
 
-<table class="table" *ngIf="contrata!=null">
-    <tbody>
+    <table class="table" *ngIf="contrata!=null">
+        <tbody>
 
-        <tr>
-            <td class="table-primary" align="left">
-                <b>CUCE</b>
-            </td>
-            <td class="table-active">
-                {{contrata.cuce}}
-            </td>
-        </tr>
-        <tr>
-            <td class="table-primary" align="left">
-                <b>Entidad</b>
-            </td>
-            <td>
-                {{contrata.entidad}}
-            </td>
-        </tr>
-        <tr>
-            <td class="table-primary" align="left">
-                <b>Tipo</b>
-            </td>
-            <td class="table-active">
-                {{contrata.tipo}}
-            </td>
-        </tr>
-        <tr>
-            <td class="table-primary" align="left">
-                <b>Modalidad</b>
-            </td>
-            <td>
-                {{contrata.modalidad}}
-            </td>
-        </tr>
-        <tr>
-            <td class="table-primary" align="left">
-                <b>Objeto</b>
-            </td>
-            <td class="table-active">
-                {{contrata.objeto}}
-            </td>
-        </tr>
-        <tr>
-            <td class="table-primary" align="left">
-                <b>Subasta</b>
-            </td>
-            <td>
-                {{contrata.subasta}}
-            </td>
-        </tr>
-        <tr>
-            <td class="table-primary" align="left">
-                <b>Fecha limite</b>
-            </td>
-            <td class="table-active">
-                {{contrata.presentacion}}
-            </td>
-        </tr>
-        <tr>
-            <td class="table-primary" align="left">
-                <b>Fecha Publicacióm</b>
-            </td>
-            <td>
-                {{contrata.publicacion}}
-            </td>
-        </tr>
-        <tr>
-            <td class="table-primary" align="left">
-                <b>Codigo para buscar Sicoes</b>
-            </td>
-            <td class="table-active">
-                {{idunico}} <b></b>
-            </td>
-        </tr>
-    </tbody>
+            <tr>
+                <td class="table-primary" align="left">
+                    <b>CUCE</b>
+                </td>
+                <td class="table-active">
+                    {{contrata.cuce}}
+                </td>
+            </tr>
+            <tr>
+                <td class="table-primary" align="left">
+                    <b>Entidad</b>
+                </td>
+                <td>
+                    {{contrata.entidad}}
+                </td>
+            </tr>
+            <tr>
+                <td class="table-primary" align="left">
+                    <b>Tipo</b>
+                </td>
+                <td class="table-active">
+                    {{contrata.tipo}}
+                </td>
+            </tr>
+            <tr>
+                <td class="table-primary" align="left">
+                    <b>Modalidad</b>
+                </td>
+                <td>
+                    {{contrata.modalidad}}
+                </td>
+            </tr>
+            <tr>
+                <td class="table-primary" align="left">
+                    <b>Objeto</b>
+                </td>
+                <td class="table-active">
+                    {{contrata.objeto}}
+                </td>
+            </tr>
+            <tr>
+                <td class="table-primary" align="left">
+                    <b>Subasta</b>
+                </td>
+                <td>
+                    {{contrata.subasta}}
+                </td>
+            </tr>
+            <tr>
+                <td class="table-primary" align="left">
+                    <b>Fecha limite</b>
+                </td>
+                <td class="table-active">
+                    {{contrata.presentacion}}
+                </td>
+            </tr>
+            <tr>
+                <td class="table-primary" align="left">
+                    <b>Fecha Publicacióm</b>
+                </td>
+                <td>
+                    {{contrata.publicacion}}
+                </td>
+            </tr>
+            <tr>
+                <td class="table-primary" align="left">
+                    <b>Codigo para buscar Sicoes</b>
+                </td>
+                <td class="table-active">
+                    {{idunico}} <b></b>
+                </td>
+            </tr>
+        </tbody>
 
-</table>
+    </table>
 </div>
 
 <h6 class="mb-3 fw-normal">
-    Si desea descargar formularios, consultar las bases de contratación y obtener más información sobre los procesos de contrataciones estatales, puede ingresar al portal web de <a href="https://www.sicoes.gob.bo">SICOES</a> y buscar por el Código Único de Contrataciones Estatales (CUCE) en la cuarta casilla. El CUCE del proceso que le interesa es {{idunico}}. Además, en la opción "Ver" puede seleccionar "TODOS" para ver todos los detalles del proceso
+    Si desea descargar formularios, consultar las bases de contratación y obtener más información sobre los procesos de
+    contrataciones estatales, puede ingresar al portal web de <a href="https://www.sicoes.gob.bo">SICOES</a> y buscar
+    por el Código Único de Contrataciones Estatales (CUCE) en la cuarta casilla. El CUCE del proceso que le interesa es
+    {{idunico}}. Además, en la opción "Ver" puede seleccionar "TODOS" para ver todos los detalles del proceso
     <p><b>Nota.</b> Este no es un sitio oficial, es un servicio externo para notificar contrataciones estatales</p>
 </h6>
 
-<div id="inferior" *ngIf="showInferior" class="div-320-50">
-    <ad [tipo]="1" [cargaren]="1" ></ad>
+<div id="inferior" *ngIf="showInferior" class="div-sense1">
+    <adsenseinfo [config]="config"></adsenseinfo>
 </div>
 <div>
     <button type="button" class="btn btn-primary btn-lg px-4 gap-3" (click)="regresar()">Regresar</button>
 </div>
 <div>
-    <button type="button" class="btn btn-secondary btn-lg px-4 gap-3" (click)="ir()">Ir al buscador de convocatorias</button>
+    <button type="button" class="btn btn-secondary btn-lg px-4 gap-3" (click)="ir()">Ir al buscador de
+        convocatorias</button>
 </div>

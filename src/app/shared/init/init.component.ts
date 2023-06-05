@@ -6,6 +6,7 @@ import { TipoService } from 'src/app/core/tipo.service';
 import { LlaveService } from 'src/app/core/llave.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { ConfigurationSense } from '../ads/adsense/configuration';
 
 @Component({
   selector: 'app-init',
@@ -29,9 +30,15 @@ export class InitComponent {
   ti: string = "";
   alterdata: string = "";
   altertipo: any = "";
-
+  config!: ConfigurationSense;
 
   constructor(private route: ActivatedRoute, location: Location, private router: Router, private util: UtilService, public tipo: TipoService, private llave: LlaveService) {
+    this.config = new ConfigurationSense(
+      'ca-pub-9676834375313066',
+      6900272380,
+      'auto',
+      true
+    );
     this.alterdata = this.route.snapshot.paramMap.get('data') ?? "";
     this.altertipo = this.route.snapshot.paramMap.get('tipo') ?? "";
     this.ti = util.getparameter('ti');
