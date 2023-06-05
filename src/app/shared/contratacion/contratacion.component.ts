@@ -1,6 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { TipoService } from 'src/app/core/tipo.service';
 import { Buffer } from 'buffer';
+import { SenseConfiguration } from '../ads/sense/config/sense.configuration';
 
 @Component({
   selector: 'app-contratacion',
@@ -14,8 +15,26 @@ export class ContratacionComponent {
   showInferior: boolean = true;
   showSuperior: boolean = true;
   intervalId: any;
+  public config: any;
+  public config2: any;
+  
   constructor(private tipo: TipoService) {
+    this.config = {} as SenseConfiguration;
 
+    this.config.tipo = "display";
+    this.config.dataadclient = "ca-pub-9676834375313066";
+    this.config.dataadformat = "auto";
+    this.config.dataadslot = "6900272380";
+    this.config.datafullwidthresponsive = "true";
+    this.config.style = "display:block";   
+    
+    this.config2 = {} as SenseConfiguration;
+    this.config2.tipo = "infeed";
+    this.config2.dataadclient = "ca-pub-9676834375313066";
+    this.config2.dataadformat = "fluid";
+    this.config2.dataadslot = "2686529353";
+    this.config2.dataadqlayoutkey = "-gm-d+x-3h+7r";
+    this.config2.style = "display:block";
   }
   private ngOnInit() {
     let data: string = this.tipo.getAux();

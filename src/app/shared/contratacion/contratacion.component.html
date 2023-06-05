@@ -1,6 +1,5 @@
-<div id="superior" *ngIf="showSuperior" class="div-320-50">
-    <ad [tipo]="3" [cargaren]="0" ></ad>
-
+<div id="superior" *ngIf="showSuperior">
+    <sense [config]="config2"></sense>
 </div>
 <div class="table-responsive">
 
@@ -89,8 +88,8 @@
     <p><b>Nota.</b> Este no es un sitio oficial, es un servicio externo para notificar contrataciones estatales</p>
 </h6>
 
-<div id="inferior" *ngIf="showInferior" class="div-320-50">
-    <ad [tipo]="1" [cargaren]="1" ></ad>
+<div id="inferior" *ngIf="showInferior" >
+    <sense [config]="config"/>
 </div>
 <div>
     <button type="button" class="btn btn-primary btn-lg px-4 gap-3" (click)="regresar()">Regresar</button>
