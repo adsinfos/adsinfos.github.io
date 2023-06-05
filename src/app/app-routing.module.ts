@@ -8,10 +8,10 @@ import { TestComponent } from './shared/test/test.component';
 
 const routes: Routes = [
   { path: '', component: InitComponent },
+  { path: 'test', component: TestComponent },
   { path: 'contratacion', component: ContratacionComponent },
   { path: 'tipos', component: TiposComponent },
   { path: 'monitor', component: MonitorComponent },
-  { path: 'test', component: TestComponent },
   { path: ':data', component: InitComponent },
   { path: ':data/:tipo', component: InitComponent }
   
