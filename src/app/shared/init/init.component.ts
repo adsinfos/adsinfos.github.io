@@ -179,7 +179,7 @@ export class InitComponent {
           this.texto = "Ir a " + this.hostin;
           this.cuando = false;
         }
-        if (this.count % 5 == 0) {
+        if (this.count % 2 == 0) {
           this.refreshDivs();
         }
       }, 1000);
