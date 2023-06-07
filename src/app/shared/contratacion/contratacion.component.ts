@@ -76,8 +76,8 @@ export class ContratacionComponent {
     this.showInferior2 = false;
     this.showSuperior = false;
     setTimeout(() => {
-      this.showInferior = false;
-      this.showInferior2= false;
+      this.showInferior = true;
+      this.showInferior2= true;
       this.showSuperior = true;
     });
 
