@@ -13,6 +13,7 @@ export class ContratacionComponent {
   idunico: string = "";
   count: number = 0;
   showInferior: boolean = true;
+  showInferior2: boolean = true;
   showSuperior: boolean = true;
   intervalId: any;
   public config: any;
@@ -72,9 +73,11 @@ export class ContratacionComponent {
   public refreshDivs() {
     console.log("refrescando divs");
     this.showInferior = false;
+    this.showInferior2 = false;
     this.showSuperior = false;
     setTimeout(() => {
-      this.showInferior = true;
+      this.showInferior = false;
+      this.showInferior2= false;
       this.showSuperior = true;
     });
 
