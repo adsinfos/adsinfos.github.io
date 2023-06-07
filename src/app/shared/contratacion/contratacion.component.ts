@@ -51,7 +51,7 @@ export class ContratacionComponent {
     }
     this.intervalId = setInterval(() => {
       this.count++;
-      if (this.count % 8 == 0) {
+      if (this.count % 3 == 0) {
         this.refreshDivs();
       }
     }, 1000);
