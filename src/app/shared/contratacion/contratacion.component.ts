@@ -106,6 +106,6 @@ export class ContratacionComponent {
     const doc = new jsPDF();
     var html = htmlToPdfmake(tabla);
     const documentDefinition = { content: html };
-    pdfMake.createPdf(documentDefinition).open();
+    pdfMake.createPdf(documentDefinition).download();
   }
 }
