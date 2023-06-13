@@ -10,7 +10,7 @@ export class TipoService {
   private _wid: string = "";
   private _hei: string = "";
   private _opcion: string = "";
-
+  private _link: string = "";
   public motorad(): string {
     if (this.tipo == "2") {
       return "google";
@@ -18,7 +18,13 @@ export class TipoService {
       return "adsterra";
     }
   }
-  
+  public get link(): string {
+    return this._link;
+  }
+  public set link(value: string) {
+    this._link = value;
+  }
+
   public get opcion(): string {
     return this._opcion;
   }

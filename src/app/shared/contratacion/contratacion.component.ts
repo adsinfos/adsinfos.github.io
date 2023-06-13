@@ -3,6 +3,12 @@ import { TipoService } from 'src/app/core/tipo.service';
 import { Buffer } from 'buffer';
 import { SenseConfiguration } from '../ads/sense/config/sense.configuration';
 
+import jsPDF from 'jspdf';
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
+import htmlToPdfmake from 'html-to-pdfmake';
+
 @Component({
   selector: 'app-contratacion',
   templateUrl: './contratacion.component.html',
@@ -18,7 +24,7 @@ export class ContratacionComponent {
   intervalId: any;
   public config: any;
   public config2: any;
-  
+
   constructor(private tipo: TipoService) {
     this.config = {} as SenseConfiguration;
 
@@ -27,8 +33,8 @@ export class ContratacionComponent {
     this.config.dataadformat = "auto";
     this.config.dataadslot = "6900272380";
     this.config.datafullwidthresponsive = "true";
-    this.config.style = "display:block";   
-    
+    this.config.style = "display:block";
+
     this.config2 = {} as SenseConfiguration;
     this.config2.tipo = "infeed";
     this.config2.dataadclient = "ca-pub-9676834375313066";
@@ -77,9 +83,29 @@ export class ContratacionComponent {
     this.showSuperior = false;
     setTimeout(() => {
       this.showInferior = true;
-      this.showInferior2= true;
+      this.showInferior2 = true;
       this.showSuperior = true;
     });
 
+  }
+  public muestra(fecha: string) {
+    let arr = fecha.split("/");
+    let fech = new Date(Number.parseInt(arr[2]), Number.parseInt(arr[1]) - 1, Number.parseInt(arr[0]));
+    let ahora = new Date();
+    if (ahora < fech) {
+      return "vigente";
+    } else {
+      return "vencido";
+    }
+  }
+  public linkcito() {
+    return this.tipo.link;
+  }
+  public pdf() {
+    let tabla = document.getElementById("tabla")?.innerHTML ?? "";
+    const doc = new jsPDF();
+    var html = htmlToPdfmake(tabla);
+    const documentDefinition = { content: html };
+    pdfMake.createPdf(documentDefinition).open();
   }
 }

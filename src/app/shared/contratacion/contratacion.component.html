@@ -2,85 +2,114 @@
     <sense [config]="config"></sense>
 </div>
 <div class="table-responsive">
+    <div id="tabla">
+        <h2>Convocatoria</h2>
+        <table class="table" *ngIf="contrata!=null">
+            <tbody>
 
-    <table class="table" *ngIf="contrata!=null">
-        <tbody>
+                <tr>
+                    <td class="table-primary" align="left">
+                        <b>CUCE</b>
+                    </td>
+                    <td class="table-active">
+                        {{contrata.cuce}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-primary" align="left">
+                        <b>Entidad</b>
+                    </td>
+                    <td>
+                        {{contrata.entidad}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-primary" align="left">
+                        <b>Tipo</b>
+                    </td>
+                    <td class="table-active">
+                        {{contrata.tipo}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-primary" align="left">
+                        <b>Modalidad</b>
+                    </td>
+                    <td>
+                        {{contrata.modalidad}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-primary" align="left">
+                        <b>Objeto</b>
+                    </td>
+                    <td class="table-active">
+                        {{contrata.objeto}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-primary" align="left">
+                        <b>Subasta</b>
+                    </td>
+                    <td>
+                        {{contrata.subasta}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-primary" align="left">
+                        <b>Fecha limite</b>
+                    </td>
+                    <td class="table-active">
+                        {{contrata.presentacion}}<br>
+                        <ng-container *ngIf="muestra(contrata.presentacion)=='vigente'">
+                            <button type="button" class="btn btn-success">Vigente</button>
+                        </ng-container>
+                        <ng-container *ngIf="muestra(contrata.presentacion)=='vencido'">
+                            <button type="button" class="btn btn-danger">Vencido</button>
+                        </ng-container>
 
-            <tr>
-                <td class="table-primary" align="left">
-                    <b>CUCE</b>
-                </td>
-                <td class="table-active">
-                    {{contrata.cuce}}
-                </td>
-            </tr>
-            <tr>
-                <td class="table-primary" align="left">
-                    <b>Entidad</b>
-                </td>
-                <td>
-                    {{contrata.entidad}}
-                </td>
-            </tr>
-            <tr>
-                <td class="table-primary" align="left">
-                    <b>Tipo</b>
-                </td>
-                <td class="table-active">
-                    {{contrata.tipo}}
-                </td>
-            </tr>
-            <tr>
-                <td class="table-primary" align="left">
-                    <b>Modalidad</b>
-                </td>
-                <td>
-                    {{contrata.modalidad}}
-                </td>
-            </tr>
-            <tr>
-                <td class="table-primary" align="left">
-                    <b>Objeto</b>
-                </td>
-                <td class="table-active">
-                    {{contrata.objeto}}
-                </td>
-            </tr>
-            <tr>
-                <td class="table-primary" align="left">
-                    <b>Subasta</b>
-                </td>
-                <td>
-                    {{contrata.subasta}}
-                </td>
-            </tr>
-            <tr>
-                <td class="table-primary" align="left">
-                    <b>Fecha limite</b>
-                </td>
-                <td class="table-active">
-                    {{contrata.presentacion}}
-                </td>
-            </tr>
-            <tr>
-                <td class="table-primary" align="left">
-                    <b>Fecha Publicacióm</b>
-                </td>
-                <td>
-                    {{contrata.publicacion}}
-                </td>
-            </tr>
-            <tr>
-                <td class="table-primary" align="left">
-                    <b>Codigo para buscar Sicoes</b>
-                </td>
-                <td class="table-active">
-                    {{idunico}} <b></b>
-                </td>
-            </tr>
-        </tbody>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-primary" align="left">
+                        <b>Fecha Publicacióm</b>
+                    </td>
+                    <td>
+                        {{contrata.publicacion}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-primary" align="left">
+                        <b>Codigo para buscar Sicoes</b>
+                    </td>
+                    <td class="table-active">
+                        {{idunico}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-primary" align="left">
+                        <b>Sicoes</b>
+                    </td>
+                    <td>
+                        Click <a href="https://www.sicoes.gob.bo" target="_blank">AQUI</a> -> Convocatorias Nacionales ->
+                        Poner
+                        codigo en la <b>cuarta casilla</b> -> Buscar -> Descargar documentos
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-primary" align="left">
+                        <b>Link Convocatoria</b>
+                    </td>
+                    <td class="table-active">
+                        <a href={{linkcito()}}>Link</a>
+                    </td>
+                </tr>
+            </tbody>
 
-    </table>
+        </table>
+    </div>
+    <button type="button" class="btn btn-primary btn-lg px-4 gap-3" (click)="pdf()">Descargar PDF</button>
+
 </div>
 
 <h6 class="mb-3 fw-normal">

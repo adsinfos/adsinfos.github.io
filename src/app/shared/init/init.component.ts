@@ -100,6 +100,7 @@ export class InitComponent {
         this.link = "/#/contratacion";
         tipo.setTipo(ti);
         tipo.setAux(data);
+        tipo.link = window.location.href;
       } else {
         this.texto = "Datos no validos";
         this.disable = true;
