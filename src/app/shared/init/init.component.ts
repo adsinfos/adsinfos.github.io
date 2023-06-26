@@ -118,7 +118,7 @@ export class InitComponent {
         tipo.setTipo("");
         tipo.setAux("");
       }
-      tipo.image = "info";
+      tipo.image = "sicoes";
       tipo.wid = "284";
       tipo.hei = "96";
     } else if (this.ti === "3") {
