@@ -31,6 +31,7 @@ export class InitComponent {
   alterdata: string = "";
   altertipo: any = "";
   public config: any;
+  public config2: any;
   public configm: any;
 
 
@@ -51,6 +52,14 @@ export class InitComponent {
     this.configm.dataadformat = "autorelaxed";
     this.configm.dataadslot = "8756238946";
     this.configm.style = "display:block";
+
+    this.config2 = {} as SenseConfiguration;
+    this.config2.tipo = "infeed";
+    this.config2.dataadclient = "ca-pub-9676834375313066";
+    this.config2.dataadformat = "fluid";
+    this.config2.dataadslot = "2686529353";
+    this.config2.dataadqlayoutkey = "-gc-v+5r-7l-18";
+    this.config2.style = "display:block";
 
     this.alterdata = this.route.snapshot.paramMap.get('data') ?? "";
     this.altertipo = this.route.snapshot.paramMap.get('tipo') ?? "";

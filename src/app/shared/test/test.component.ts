@@ -28,7 +28,7 @@ export class TestComponent {
     this.config2.dataadclient = "ca-pub-9676834375313066";
     this.config2.dataadformat = "fluid";
     this.config2.dataadslot = "2686529353";
-    this.config2.dataadqlayoutkey = "-gm-d+x-3h+7r";
+    this.config2.dataadqlayoutkey = "-gc-v+5r-7l-18";
     this.config2.style = "display:block";
   }
 }
