@@ -24,8 +24,17 @@ export class ContratacionComponent {
   intervalId: any;
   public config: any;
   public config2: any;
+  public configm: any;
 
   constructor(private tipo: TipoService) {
+    this.configm = {} as SenseConfiguration;
+
+    this.configm.tipo = "multiple";
+    this.configm.dataadclient = "ca-pub-9676834375313066";
+    this.configm.dataadformat = "autorelaxed";
+    this.configm.dataadslot = "8756238946";
+    this.configm.style = "display:block";
+
     this.config = {} as SenseConfiguration;
 
     this.config.tipo = "display";

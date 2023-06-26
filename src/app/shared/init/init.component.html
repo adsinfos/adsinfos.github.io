@@ -12,5 +12,10 @@
     <ad [tipo]="1" [cargaren]="1"></ad>
 </div>
 <div id="superior" *ngIf="showInferior && this.tipo.motorad()=='google'">
-    <sense [config]="config"></sense>
+    <p>
+        <sense [config]="config"></sense>
+    </p>
+    <p>
+        <sense [config]="configm"></sense>
+    </p>
 </div>

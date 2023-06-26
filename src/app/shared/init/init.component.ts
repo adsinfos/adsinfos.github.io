@@ -31,6 +31,7 @@ export class InitComponent {
   alterdata: string = "";
   altertipo: any = "";
   public config: any;
+  public configm: any;
 
 
   constructor(private route: ActivatedRoute, location: Location, private router: Router, private util: UtilService, public tipo: TipoService, private llave: LlaveService) {
@@ -42,6 +43,14 @@ export class InitComponent {
     this.config.dataadslot = "6900272380";
     this.config.datafullwidthresponsive = "true";
     this.config.style = "display:block";
+
+    this.configm = {} as SenseConfiguration;
+
+    this.configm.tipo = "multiple";
+    this.configm.dataadclient = "ca-pub-9676834375313066";
+    this.configm.dataadformat = "autorelaxed";
+    this.configm.dataadslot = "8756238946";
+    this.configm.style = "display:block";
 
     this.alterdata = this.route.snapshot.paramMap.get('data') ?? "";
     this.altertipo = this.route.snapshot.paramMap.get('tipo') ?? "";
