@@ -103,7 +103,7 @@ export class InitComponent {
       let ti: string = this.ti;
 
       if (llave.valid(data)) {
-        this.texto = "Ver los datos";
+        this.texto = "Ver los datos del SICOES";
         this.disable = false;
         this.hostin = "ver datos Sicoes";
         this.link = "/#/contratacion";
