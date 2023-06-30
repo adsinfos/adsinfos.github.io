@@ -660,6 +660,9 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 jsrsasign
 MIT
 
+osbo-sense
+MIT
+
 pdfmake
 MIT
 The MIT License (MIT)
