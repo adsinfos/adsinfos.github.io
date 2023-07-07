@@ -228,5 +228,7 @@ export class InitComponent {
   public resto() {
     return this.maximo - this.count;
   }
-
+  public ir(url: string) {
+    window.location.href = url;
+  }
 }
