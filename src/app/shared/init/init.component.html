@@ -7,7 +7,7 @@
 <p></p>
 <h6 class="mb-3 fw-normal" *ngIf="cuando">Espera por favor..{{resto()}} segundos</h6>
 <button type="button" class="btn btn-primary" [disabled]="disable" (click)="click()" *ngIf="!nohay">{{texto}}</button>
-<br><br><br>
+<br><br>
 <button type="button" class="btn btn-secondary" (click)="ir('https://convocatorias.adsinfo.me')" *ngIf="this.ti=='2'">Mas Convocatorias</button>
 <br><br>
 <div id="superior" *ngIf="showInferior && this.tipo.motorad()=='adsterra'" class="div-300-250">
