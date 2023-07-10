@@ -198,7 +198,7 @@ export class InitComponent {
           this.texto = "Ir a " + this.hostin;
           this.cuando = false;
         }
-        if (this.count % 300 == 0) {
+        if (this.count % 20 == 0) {
           this.refreshDivs();
         }
       }, 1000);
