@@ -16,7 +16,13 @@
                         <hr>
                         <a href="http://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion={{contrata.id}}"
                             target="_blank">
-                            <img src="https://adsinfo.me/assets/images/chilelink.png" />
+                            <ng-container *ngIf="mostrarimagen">
+                                <img src="https://adsinfo.me/assets/images/chilelink.png" />
+                            </ng-container>
+                            <ng-container *ngIf="!mostrarimagen">
+                                Link a Chile Compra
+                            </ng-container>
+
                         </a>
                     </td>
                 </tr>
@@ -89,7 +95,12 @@
                     </td>
                     <td>
                         <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">
-                            <img src="https://adsinfo.me/assets/images/cc.png" width="120" height="30" />
+                            <ng-container *ngIf="mostrarimagen">
+                                <img src="https://adsinfo.me/assets/images/cc.png" width="120" height="30" />
+                            </ng-container>
+                            <ng-container *ngIf="!mostrarimagen">
+                                Creative Commons
+                            </ng-container>
                         </a>
                     </td>
                 </tr>
@@ -97,7 +108,6 @@
 
         </table>
     </div>
-    <button type="button" class="btn btn-primary btn-lg px-4 gap-3" (click)="pdf()">Comparte en PDF</button>
 
 </div>
 

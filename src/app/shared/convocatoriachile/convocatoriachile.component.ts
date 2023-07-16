@@ -21,6 +21,8 @@ export class ConvocatoriachileComponent {
   showInferior: boolean = true;
   showInferior2: boolean = true;
   showSuperior: boolean = true;
+  mostrarimagen: boolean = true;
+
   intervalId: any;
   public config: any;
   public config2: any;
@@ -109,10 +111,12 @@ export class ConvocatoriachileComponent {
     return this.tipo.link;
   }
   public pdf() {
+    this.mostrarimagen = false;
     let tabla = document.getElementById("tabla")?.innerHTML ?? "";
-    const doc = new jsPDF();
     var html = htmlToPdfmake(tabla);
     const documentDefinition = { content: html };
     pdfMake.createPdf(documentDefinition).download();
+    //this.mostrarimagen = true;
+
   }
 }
