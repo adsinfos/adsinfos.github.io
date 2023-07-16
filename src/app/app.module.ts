@@ -14,6 +14,7 @@ import { MonitorComponent } from './shared/monitor/monitor.component';
 import { AdComponent } from './shared/ads/ad/ad.component';
 import { SenseComponent } from './shared/ads/sense/sense.component';
 import { TestComponent } from './shared/test/test.component';
+import { ConvocatoriachileComponent } from './shared/convocatoriachile/convocatoriachile.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TestComponent } from './shared/test/test.component';
     MonitorComponent,
     AdComponent,
     SenseComponent,
-    TestComponent
+    TestComponent,
+    ConvocatoriachileComponent
   ],
   imports: [
     BrowserModule,

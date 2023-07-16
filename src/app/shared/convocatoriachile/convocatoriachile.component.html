@@ -1,0 +1,110 @@
+<div id="superior" *ngIf="showSuperior">
+    <sense [config]="config2"></sense>
+</div>
+<div class="table-responsive">
+    <div id="tabla">
+        <h2>Licitacion de Chile Compra</h2>
+        <table class="table" *ngIf="contrata!=null">
+            <tbody>
+
+                <tr>
+                    <td class="table-primary" align="left">
+                        <b>Id</b>
+                    </td>
+                    <td class="table-active">
+                        <h2>{{contrata.id}}</h2>
+                        <hr>
+                        <a href="http://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion={{contrata.id}}"
+                            target="_blank">
+                            <img src="https://adsinfo.me/assets/images/chilelink.png" />
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-primary" align="left">
+                        <b>Titulo</b>
+                    </td>
+                    <td>
+                        {{contrata.title}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-primary" align="left">
+                        <b>Descripción</b>
+                    </td>
+                    <td class="table-active">
+                        {{contrata.description}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-primary" align="left">
+                        <b>Estado</b>
+                    </td>
+                    <td>
+                        {{contrata.status}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-primary" align="left">
+                        <b>Monto</b>
+                    </td>
+                    <td class="table-active">
+                        {{contrata.monto}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-primary" align="left">
+                        <b>Institución</b>
+                    </td>
+                    <td>
+                        {{contrata.responsables}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-primary" align="left">
+                        <b>Fecha Publicación</b>
+                    </td>
+                    <td>
+                        {{contrata.fechaPublicacion}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-primary" align="left">
+                        <b>Fecha limite</b>
+                    </td>
+                    <td class="table-active">
+                        {{contrata.fechaLimite}}<br>
+                        <ng-container *ngIf="muestra(contrata.fechaLimite)=='vigente'">
+                            <button type="button" class="btn btn-success">Vigente</button>
+                        </ng-container>
+                        <ng-container *ngIf="muestra(contrata.fechaLimite)=='vencido'">
+                            <button type="button" class="btn btn-danger">Vencido</button>
+                        </ng-container>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-primary" align="left">
+                        <b>Licensia de los datos</b>
+                    </td>
+                    <td>
+                        <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">
+                            <img src="https://adsinfo.me/assets/images/cc.png" width="120" height="30" />
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+    <button type="button" class="btn btn-primary btn-lg px-4 gap-3" (click)="pdf()">Comparte en PDF</button>
+
+</div>
+
+
+<sense [config]="configm" />
+<div>
+    <p></p>
+    <button type="button" class="btn btn-primary btn-lg px-4 gap-3" (click)="regresar()">Regresar</button>
+
+</div>

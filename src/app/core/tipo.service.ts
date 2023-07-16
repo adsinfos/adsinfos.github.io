@@ -12,7 +12,7 @@ export class TipoService {
   private _opcion: string = "";
   private _link: string = "";
   public motorad(): string {
-    if (this.tipo == "2") {
+    if (this.tipo == "2" || this.tipo == "5") {
       return "google";
     } else {
       return "adsterra";

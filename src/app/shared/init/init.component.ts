@@ -174,6 +174,28 @@ export class InitComponent {
       tipo.image = "monitor";
       tipo.wid = "284";
       tipo.hei = "96";
+    } else if (this.ti === "5") {
+      let data: string = util.getparameter('data') === "" ? this.alterdata : util.getparameter('data');
+      let ti: string = this.ti;
+
+      if (llave.valid(data)) {
+        this.texto = "Ver Licitacion de Chile Compra";
+        this.disable = false;
+        this.hostin = "Ver datos de Chile Compra";
+        this.link = "/#/convocatoriachile";
+        tipo.setTipo(ti);
+        tipo.setAux(data);
+      } else {
+        this.texto = "Datos no validos";
+        this.disable = true;
+        this.hostin = "Datos no validos";
+        this.link = "/#/error";
+        tipo.setTipo("");
+        tipo.setAux("");
+      }
+      tipo.image = "chile";
+      tipo.wid = "284";
+      tipo.hei = "96";
     }
   }
   public validos() {
@@ -208,6 +230,8 @@ export class InitComponent {
       this.router.navigate(['/tipos']);
     } else if (this.tipo.getTipo() == "4") {
       this.router.navigate(['/monitor']);
+    } else if (this.tipo.getTipo() == "5") {
+      this.router.navigate(['/convocatoriachile']);
     } else {
       window.location.href = this.link != null ? this.link : '';
     }
