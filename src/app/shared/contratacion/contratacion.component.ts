@@ -101,7 +101,7 @@ export class ContratacionComponent {
     let arr = fecha.split("/");
     let fech = new Date(Number.parseInt(arr[2]), Number.parseInt(arr[1]) - 1, Number.parseInt(arr[0]));
     let ahora = new Date();
-    if (ahora < fech) {
+    if (ahora <= fech) {
       return "vigente";
     } else {
       return "vencido";
