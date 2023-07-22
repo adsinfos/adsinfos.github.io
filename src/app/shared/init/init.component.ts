@@ -22,7 +22,7 @@ export class InitComponent {
   hostin: string = "";
   showInferior: boolean = true;
   showSuperior: boolean = true;
-  maximo: number = 5;
+  maximo: number = 15;
   cuando: boolean = false;
 
   hostsvalidos: string = "";
@@ -220,7 +220,7 @@ export class InitComponent {
           this.texto = "Ir a " + this.hostin;
           this.cuando = false;
         }
-        if (this.count % 20 == 0) {
+        if (this.count % 7 == 0) {
           this.refreshDivs();
         }
       }, 1000);
