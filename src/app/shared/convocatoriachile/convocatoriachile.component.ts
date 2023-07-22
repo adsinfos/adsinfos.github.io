@@ -115,7 +115,8 @@ export class ConvocatoriachileComponent {
     this.mostrarimagen = false;
     setTimeout(() => {
       let tabla = document.getElementById("tabla")?.innerHTML ?? "";
-      let html = htmlToPdfmake(tabla);
+      let html: any = htmlToPdfmake(tabla) as Content;
+      html[1].table.widths = [100, 400];
       const documentDefinition = { content: html };
       pdfMake.createPdf(documentDefinition).download();
       this.mostrarimagen = true;
