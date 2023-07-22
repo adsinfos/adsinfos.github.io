@@ -3,11 +3,12 @@ import { TipoService } from 'src/app/core/tipo.service';
 import { Buffer } from 'buffer';
 import { SenseConfiguration } from '../ads/sense/config/sense.configuration';
 
-import jsPDF from 'jspdf';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 import htmlToPdfmake from 'html-to-pdfmake';
+import { UtilService } from 'src/app/core/util.service';
+import { Content, ContentTable, Table } from 'pdfmake/interfaces';
 
 @Component({
   selector: 'app-convocatoriachile',
@@ -28,7 +29,7 @@ export class ConvocatoriachileComponent {
   public config2: any;
   public configm: any;
 
-  constructor(private tipo: TipoService) {
+  constructor(private tipo: TipoService, public util: UtilService) {
     this.configm = {} as SenseConfiguration;
 
     this.configm.tipo = "multiple";
@@ -112,11 +113,13 @@ export class ConvocatoriachileComponent {
   }
   public pdf() {
     this.mostrarimagen = false;
-    let tabla = document.getElementById("tabla")?.innerHTML ?? "";
-    var html = htmlToPdfmake(tabla);
-    const documentDefinition = { content: html };
-    pdfMake.createPdf(documentDefinition).download();
-    //this.mostrarimagen = true;
+    setTimeout(() => {
+      let tabla = document.getElementById("tabla")?.innerHTML ?? "";
+      let html = htmlToPdfmake(tabla);
+      const documentDefinition = { content: html };
+      pdfMake.createPdf(documentDefinition).download();
+      this.mostrarimagen = true;
+    });
 
   }
 }

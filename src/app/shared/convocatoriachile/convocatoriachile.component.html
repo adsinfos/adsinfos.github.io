@@ -18,6 +18,10 @@
                             target="_blank">
                             <ng-container *ngIf="mostrarimagen">
                                 <img src="https://adsinfo.me/assets/images/chilelink.png" />
+                                <br>
+                                <button type="button" class="btn btn-primary btn-lg px-4 gap-3"
+                                    (click)="this.util.link('https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion={{contrata.id}}')">Ir
+                                    a ChileCompra</button>
                             </ng-container>
                             <ng-container *ngIf="!mostrarimagen">
                                 Link a Chile Compra
@@ -38,7 +42,7 @@
                     <td class="table-primary" align="left">
                         <b>Descripción</b>
                     </td>
-                    <td class="table-active">
+                    <td class="table-active" style="width: 100px;">
                         {{contrata.description}}
                     </td>
                 </tr>
@@ -59,7 +63,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="table-primary" align="left">
+                    <td class="table-primary" align="left" style="width: 100px;">
                         <b>Institución</b>
                     </td>
                     <td>
@@ -107,7 +111,9 @@
             </tbody>
 
         </table>
+
     </div>
+    <button type="button" class="btn btn-primary btn-lg px-4 gap-3" (click)="pdf()">Compartir en pdf</button>
 
 </div>
 
