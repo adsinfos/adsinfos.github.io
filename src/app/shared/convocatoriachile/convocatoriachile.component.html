@@ -22,15 +22,17 @@
                                 <button type="button" class="btn btn-primary btn-lg px-4 gap-3"
                                     (click)="this.util.link('https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?idlicitacion={{contrata.id}}')">Ir
                                     a ChileCompra</button>
-                                <br>
-                                Si da error de privilegios, vuelva a intentar o use el codigo {{contrata.id}} para buscar en el busacdor 
-                                <a href="https://mercadopublico.cl"></a>
+
                             </ng-container>
                             <ng-container *ngIf="!mostrarimagen">
                                 Link a Chile Compra
                             </ng-container>
 
                         </a>
+                        <br>
+                        Si da error de privilegios, vuelva a intentar o use el codigo {{contrata.id}} para buscar en el
+                        busacdor
+                        <a href="https://mercadopublico.cl"></a>
                     </td>
                 </tr>
                 <tr>
