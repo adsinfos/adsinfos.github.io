@@ -29,7 +29,8 @@
               "src/favicon.ico",
               "src/assets",
               "src/CNAME",
-              "src/ads.txt"
+              "src/ads.txt",
+              "src/privacy.html"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
