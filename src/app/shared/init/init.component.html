@@ -8,7 +8,8 @@
 <h6 class="mb-3 fw-normal" *ngIf="cuando">Espera por favor..{{resto()}} segundos</h6>
 <button type="button" class="btn btn-primary" [disabled]="disable" (click)="click()" *ngIf="!nohay">{{texto}}</button>
 <br><br>
-<button type="button" class="btn btn-secondary" (click)="ir('https://convocatorias.adsinfo.me')" *ngIf="this.ti=='2'">Mas Convocatorias</button>
+<button type="button" class="btn btn-secondary" (click)="ir('https://convocatorias.adsinfo.me/#/bo')" *ngIf="this.ti=='2'">Mas Convocatorias</button>
+<button type="button" class="btn btn-secondary" (click)="ir('https://convocatorias.adsinfo.me/#/cl')" *ngIf="this.ti=='5'">Mas Convocatorias</button>
 <br><br>
 <div id="superior" *ngIf="showInferior && this.tipo.motorad()=='adsterra'" class="div-300-250">
     <ad [tipo]="1" [cargaren]="1"></ad>
