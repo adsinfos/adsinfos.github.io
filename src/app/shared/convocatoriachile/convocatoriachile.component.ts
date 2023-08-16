@@ -68,7 +68,7 @@ export class ConvocatoriachileComponent {
     }
     this.intervalId = setInterval(() => {
       this.count++;
-      if (this.count % 10 == 0) {
+      if (this.count % 6 == 0) {
         this.refreshDivs();
       }
     }, 1000);
