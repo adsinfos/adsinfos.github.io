@@ -6,6 +6,7 @@ import { TiposComponent } from './shared/tipos/tipos.component';
 import { MonitorComponent } from './shared/monitor/monitor.component';
 import { TestComponent } from './shared/test/test.component';
 import { ConvocatoriachileComponent } from './shared/convocatoriachile/convocatoriachile.component';
+import { ContactoanuncioComponent } from './shared/contactoanuncio/contactoanuncio.component';
 
 const routes: Routes = [
   { path: '', component: InitComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'tipos', component: TiposComponent },
   { path: 'monitor', component: MonitorComponent },
   { path: 'convocatoriachile', component: ConvocatoriachileComponent },
+  { path: 'contactoanuncio', component: ContactoanuncioComponent },
   { path: ':data', component: InitComponent },
   { path: ':data/:tipo', component: InitComponent }
 

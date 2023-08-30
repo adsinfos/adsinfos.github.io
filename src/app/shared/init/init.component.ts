@@ -196,6 +196,28 @@ export class InitComponent {
       tipo.image = "chile";
       tipo.wid = "284";
       tipo.hei = "96";
+    } else if (this.ti === "6") {
+      let data: string = util.getparameter('data') === "" ? this.alterdata : util.getparameter('data');
+      let ti: string = this.ti;
+
+      if (llave.valid(data)) {
+        this.texto = "Ver datos de Contacto";
+        this.disable = false;
+        this.hostin = "Anuncios Bolivia";
+        this.link = "/#/contactoanuncio";
+        tipo.setTipo(ti);
+        tipo.setAux(data);
+      } else {
+        this.texto = "Datos no validos";
+        this.disable = true;
+        this.hostin = "Datos no validos";
+        this.link = "/#/error";
+        tipo.setTipo("");
+        tipo.setAux("");
+      }
+      tipo.image = "anuncio";
+      tipo.wid = "284";
+      tipo.hei = "96";
     }
   }
   public validos() {

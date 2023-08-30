@@ -15,6 +15,7 @@ import { AdComponent } from './shared/ads/ad/ad.component';
 import { SenseComponent } from './shared/ads/sense/sense.component';
 import { TestComponent } from './shared/test/test.component';
 import { ConvocatoriachileComponent } from './shared/convocatoriachile/convocatoriachile.component';
+import { ContactoanuncioComponent } from './shared/contactoanuncio/contactoanuncio.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ConvocatoriachileComponent } from './shared/convocatoriachile/convocato
     AdComponent,
     SenseComponent,
     TestComponent,
-    ConvocatoriachileComponent
+    ConvocatoriachileComponent,
+    ContactoanuncioComponent
   ],
   imports: [
     BrowserModule,

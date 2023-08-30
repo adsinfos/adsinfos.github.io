@@ -1,0 +1,42 @@
+<div id="superior" *ngIf="showSuperior" class="div-320-50">
+    <sense [config]="config2"></sense>
+
+</div>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="table-primary">Contacto del anuncio</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td align="center">
+                    <b>Anuncio</b>
+                </td>
+            <tr>
+                <td align="center">
+                    {{contacto.titulo}}
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <b>Información de Contacto</b>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    {{contacto.contactos}}
+                </td>
+            </tr>
+
+
+        </tbody>
+
+    </table>
+</div>
+<div id="inferior" *ngIf="showInferior" class="div-320-50">
+    <sense [config]="config" />
+</div>
+<button type="button" class="btn btn-primary btn-lg px-4 gap-3" (click)="regresar()">Regresar</button>
