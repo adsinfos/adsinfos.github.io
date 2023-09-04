@@ -27,7 +27,55 @@
             </tr>
             <tr>
                 <td align="center">
-                    {{contacto.contactos}}
+                    <ng-container [ngSwitch]="this.contacto.tipocontacto">
+                        <ng-container *ngSwitchCase="'TELEFONO'">
+                            {{contacto.contactos}}
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'WHATSAPP'">
+                            <a href="https://wa.me/{{contacto.contactos}}" target="_blank">{{contacto.contactos}}</a>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'TELEGRAM'">
+                            <a href="https://t.me/{{contacto.contactos}}" target="_blank">{{contacto.contactos}}</a>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'LINK'">
+                            <a href="{{contacto.contactos}}" target="_blank">{{contacto.contactos}}</a>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'EMAIL'">
+                            <a href="mailto:{{contacto.contactos}}" target="_blank">{{contacto.contactos}}</a>
+                        </ng-container>
+                        <ng-container *ngSwitchDefault>
+                            {{contacto.contactos}}
+                        </ng-container>
+                    </ng-container>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <b>Información de Contacto Extra</b>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <ng-container [ngSwitch]="contacto.tipocontacto2">
+                        <ng-container *ngSwitchCase="'TELEFONO'">
+                            {{contacto.contactos2}}
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'WHATSAPP'">
+                            <a href="https://wa.me/{{contacto.contactos2}}" target="_blank">{{contacto.contactos2}}</a>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'TELEGRAM'">
+                            <a href="https://t.me/{{contacto.contactos2}}" target="_blank">{{contacto.contactos2}}</a>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'LINK'">
+                            <a href="{{contacto.contactos2}}" target="_blank">{{contacto.contactos2}}</a>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'EMAIL'">
+                            <a href="mailto:{{contacto.contactos2}}" target="_blank">{{contacto.contactos2}}</a>
+                        </ng-container>
+                        <ng-container *ngSwitchDefault>
+                            No disponible
+                        </ng-container>
+                    </ng-container>
                 </td>
             </tr>
 

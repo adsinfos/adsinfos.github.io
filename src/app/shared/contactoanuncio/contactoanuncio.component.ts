@@ -13,7 +13,7 @@ export class ContactoanuncioComponent {
   showSuperior: boolean = true;
   intervalId: any;
   count: number = 0;
-  contacto: any;
+  public contacto: any;
   public config: any;
   public config2: any;
   public configm: any;
