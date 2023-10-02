@@ -1166,6 +1166,24 @@
             "urlImagen": "https://wa.me",
             "alltime": true,
             "host": "wa.me"
+        },
+        {
+            "id": 72,
+            "url": "*",
+            "lista": [
+                {
+                    "urlCanal": "https://t.me/+lxncTxkYHHliNTMx",
+                    "descripcionCanal": "Monitor 24/7 de Comunicados del Ministerio de Economica - DGSGIF - Bolivia",
+                    "idChat": "-1001905146351",
+                    "id": 12,
+                    "token": "*"
+                }
+            ],
+            "feedtype": "AUTO",
+            "site": "Medium programmercito",
+            "urlImagen": "https://wa.me",
+            "alltime": true,
+            "host": "medium.com"
         }
     ]
 }
