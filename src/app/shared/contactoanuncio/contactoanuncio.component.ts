@@ -79,9 +79,6 @@ export class ContactoanuncioComponent {
     }
     this.intervalId = setInterval(() => {
       this.count++;
-      if (this.count % 8 == 0) {
-        this.refreshDivs();
-      }
     }, 1000);
 
   }

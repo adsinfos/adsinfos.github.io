@@ -241,10 +241,11 @@ export class InitComponent {
           this.readyLink = true;
           this.texto = "Ir a " + this.hostin;
           this.cuando = false;
-        }
-        if (this.count % 15 == 0) {
           this.refreshDivs();
         }
+        //if (this.count % 15 == 0) {
+        //  this.refreshDivs();
+        //}
       }, 1000);
     } else if (this.tipo.getTipo() == "2") {
       this.router.navigate(['/contratacion']);
