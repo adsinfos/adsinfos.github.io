@@ -78,7 +78,7 @@ export class ConvocatoriachileComponent {
     }
   }
   ir() {
-    window.location.href = "https://convocatorias.adsinfo.me";
+    window.location.href = "https://convocatorias.infobots.org";
   }
   regresar() {
     clearInterval(this.intervalId);

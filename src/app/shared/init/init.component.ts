@@ -104,7 +104,7 @@ export class InitComponent {
       } else {
         tipo.image = "completo";
         this.nohay = true;
-        window.location.href = "http://homecito.adsinfo.me";
+        window.location.href = "http://homecito.infobots.org";
       }
 
     } else if (this.ti === "2") {
