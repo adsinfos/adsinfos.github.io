@@ -2,3 +2,15 @@
   color: #1356f7 !important;
 }
 
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Asegura que el footer se muestre por encima de otros elementos si es necesario */
+}
+
+
+body {
+  margin-bottom: 60px; /* Ajusta este valor según la altura de tu footer */
+}
