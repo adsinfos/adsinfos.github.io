@@ -1183,7 +1183,61 @@
             "site": "Medium programmercito",
             "urlImagen": "https://wa.me",
             "alltime": true,
-            "host": "medium.com"
+            "host": "wired.com"
+        },
+        {
+            "id": 73,
+            "url": "*",
+            "lista": [
+                {
+                    "urlCanal": "https://t.me/+lxncTxkYHHliNTMx",
+                    "descripcionCanal": "Monitor 24/7 de Comunicados del Ministerio de Economica - DGSGIF - Bolivia",
+                    "idChat": "-1001905146351",
+                    "id": 12,
+                    "token": "*"
+                }
+            ],
+            "feedtype": "AUTO",
+            "site": "Medium programmercito",
+            "urlImagen": "https://wa.me",
+            "alltime": true,
+            "host": "techcrunch.com"
+        },
+        {
+            "id": 74,
+            "url": "*",
+            "lista": [
+                {
+                    "urlCanal": "https://t.me/+lxncTxkYHHliNTMx",
+                    "descripcionCanal": "Monitor 24/7 de Comunicados del Ministerio de Economica - DGSGIF - Bolivia",
+                    "idChat": "-1001905146351",
+                    "id": 12,
+                    "token": "*"
+                }
+            ],
+            "feedtype": "AUTO",
+            "site": "Medium programmercito",
+            "urlImagen": "https://wa.me",
+            "alltime": true,
+            "host": "nintenduo.com"
+        },
+        {
+            "id": 75,
+            "url": "*",
+            "lista": [
+                {
+                    "urlCanal": "https://t.me/+lxncTxkYHHliNTMx",
+                    "descripcionCanal": "Monitor 24/7 de Comunicados del Ministerio de Economica - DGSGIF - Bolivia",
+                    "idChat": "-1001905146351",
+                    "id": 12,
+                    "token": "*"
+                }
+            ],
+            "feedtype": "AUTO",
+            "site": "Medium programmercito",
+            "urlImagen": "https://wa.me",
+            "alltime": true,
+            "host": "sensacine.com"
         }
     ]
 }
